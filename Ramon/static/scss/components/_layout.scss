@@ -1,0 +1,33 @@
+//
+// Layout.scss
+// --------------------------------------------------
+
+.delay1frame {
+  @include animationDelay(0.1s);
+}
+
+.delay3frame {
+  @include animationDelay(0.3s);
+}
+
+@media #{$small-only} {
+  .fullheight {
+    height: auto !important;
+  }
+}
+
+.row {
+  clear: both;
+}
+
+body {
+  overflow-x: hidden;
+  font-size: $default-font-size;
+  line-height: $default-line-height;
+  color: $default-font-color;
+  @media (max-width: 770px){
+    background-position: center 36px;
+  }
+}
+
+

@@ -1,0 +1,357 @@
+//
+// Occasions overzicht
+// --------------------------------------------------
+//
+// Inputs
+//
+#aanbod-container h1 {
+	margin-bottom: 50px;
+}
+#occasion-overzicht #occasionmodule-listing .select-option span { color: $default-font-color !important; }
+.remove-item,
+input[type="text"],
+div.custom-select .selector,
+select {
+	position: relative;
+	display: block;
+	width: 100%;
+	margin: 0 0 20px;
+	padding: 5px 8px;
+	text-decoration: none;
+	color: $default-font-color;
+	border: 1px solid $grayLight;
+	background: #fff;
+	@include border-radius(4px);
+	@include box-shadow(none);
+	&:hover,&:focus {
+		text-decoration: none;
+		border-color: $merk-color;
+		@include box-shadow(none);
+	}
+	&:after {
+		position: absolute;
+		top: 50%;
+		right: 10px;
+		width: 10px;
+		height: 10px;
+		margin: -5px 0 0;
+		background: url(../img/sprite-arrows.png) 0 -20px no-repeat;
+		content: "";
+	}
+}
+select.custom-select {
+	background: #fff url(../img/arrow-touch-fallback.png) right center no-repeat;
+}
+
+// Remove
+.remove-item {
+	&:after {
+		display: none;
+	}
+	span {
+		position: absolute;
+		top: 50%;
+		right: 8px;
+		margin: -7px 0 0;
+		width: 12px;
+		height: 12px;
+		text-align: center;
+		font: 700 10px/10px arial, Helvetica, Arial, sans-serif;
+		color: #fff;
+		background: #DC1F23;
+		&:after {
+			position: absolute;
+			top: 0;
+			left: -6px;
+			height: 0;
+			width: 0;
+			border-style: solid;
+			border-width: 6px 6px 6px 0;
+			border-color: transparent #dc1f22 transparent transparent;
+			content: "";
+		}
+	}
+}
+
+
+#occasion-overzicht {
+	#aanbod-container {
+		margin-top: 13px;
+	}
+	#breadcrumb {
+		width: 220px;
+		padding-right: 55px;
+	}
+}
+
+.occasions {
+	#occasion-overzicht {
+		label {
+			margin: 0 0 7px;
+			font-weight: 700;
+		}
+
+		// aside
+		aside#filter {
+			> section {
+				margin: 0 0 20px;
+				border-bottom: 1px solid $grayLight;
+
+				// uitgebreid_zoeken
+				&.uitgebreid_zoeken {
+					> a {
+						position: relative;
+						display: block;
+						margin: 0 0 20px;
+						color: $default-font-color;
+						font-weight: 700;
+						&:after {
+							position: absolute;
+							top: 50%;
+							right: 10px;
+							width: 10px;
+							height: 10px;
+							margin: -5px 0 0;
+							background: url(../img/sprite-arrows.png) 0 -20px no-repeat;
+							content: "";
+						}
+					}
+					.inner {
+						display: none;
+						width: 100%;
+						> div.input {
+							float: left;
+							width: 50%;
+							&.left { padding: 0 6px 0 0; }
+							&.right { padding: 0 0 0 6px; }
+						}
+					}
+				}
+			}
+		}
+
+		// Occasion overzicht
+		#aanbod-container {
+			padding: 20px;
+			background: $grayLighter;
+			@media #{$large-up} { padding: 40px; }
+
+			//Top filter
+			.filter {
+				label[for="sort"] {
+					display: inline-block;
+					margin-right: 15px;
+				}
+				.custom-select {
+					display: inline-block;
+					min-width: 110px !important;
+				}
+
+				.switch-view {
+					a {
+						float: left;
+						padding: 7px 7px 5px;
+						font-size: 12px;
+						line-height: 15px;
+						color: $default-font-color;
+						background: #fff;
+						&#listview { margin: 0 10px 0 0; }
+						&.active i { color: $merk-color; }
+						&:hover { text-decoration: none; }
+						@include border-radius(4px);
+						i {
+							margin: 0 5px 0 0;
+							font-size: 15px;
+							line-height: 15px;
+							vertical-align: middle;
+						}
+					}
+				}
+			}
+
+			#occasionmodule-listing {
+				clear: both;
+				.list-offers {
+					padding: 0 $column-gutter/2;
+					> li {
+						position: relative;
+						float: left;
+						width: 100%;
+						margin: 20px 0 0;
+						border: solid #FFF;
+						border-width: 0 0 1px;
+						@include clearfix;
+
+						// Left
+						.image-container {
+							@media #{$small-only} { 	@include grid-column(16); }
+							@media #{$medium-only} {	@include grid-column(6); }
+							@media #{$large-up} {		@include grid-column(4); }
+							margin: 0 0 20px;
+							padding: 0 $column-gutter/2 0 0 !important;
+						}
+
+						// Middle
+						.content {
+							@media #{$small-only} { 	@include grid-column(16); }
+							@media #{$medium-only} {	@include grid-column(10); }
+							@media #{$large-up} {		@include grid-column(9); }
+
+							h2 {
+								display: inline-block;
+								margin: 0;
+								font-size: rem-calc(14);
+								line-height: 16px;
+								color: $merk-color;
+							}
+							h3 {
+								display: inline-block;
+								margin: 0 0 15px;
+								font-size: rem-calc(12);
+								font-weight: 400;
+								line-height: 16px;
+								color: $default-font-color;
+							}
+							ul.details {
+								li { width: 50%; }
+								label { font-weight: 400; }
+								label,span {
+									@media #{$small-only} { display: inline-block; width: 100%; min-width: 95px; };
+								}
+							}
+						}
+
+						// Right
+						.prijsvestiging {
+							@media #{$small-only} { 	@include grid-column(16); }
+							@media #{$medium-only} {	@include grid-column(16); }
+							@media #{$large-up} {		@include grid-column(3); }
+							padding: 0 0 0 $column-gutter/2 !important;
+							.price {
+								margin: 0 0 20px;
+								font-size: 25px;
+								line-height: 25px;
+								@media screen and (min-width: 768px) and (max-width: 1070px ){
+									font-size: 16px;
+								}
+								span {
+									text-transform: none;
+									font-size: 12px;
+									font-weight: 400;
+								}
+								&.van {
+									margin: 0;
+									font-size: 12px;
+									line-height: 35px;
+									font-weight: 400;
+									text-transform: none;
+								}
+								&.voordeel {
+									min-width: 165px;
+									margin: -10px 0 10px;
+									font-size: 21px;
+									line-height: 35px;
+									text-transform: none;
+									color: $merk-color !important;
+									sup { font-size: 11px; color: $merk-color !important; }
+								}
+							}
+
+							.button {
+								min-width: 110px;
+								width: 100%;
+								text-align: left;
+							}
+						}
+					}
+
+
+
+					// Grid
+					&.grid {
+						padding: 0 0 0 $column-gutter/4;
+						> li {
+							@media #{$small-only}  { width: 100% }
+							@media #{$medium-only} { width: 50% }
+							@media #{$large-up}    { width: 33% }
+
+							// Left middle right
+							.image-container,.content,.prijsvestiging {
+								@media #{$small-only}  { width: 100% }
+								@media #{$medium-only} { width: 100% }
+								@media #{$large-up}    { width: 100% }
+								padding: 0 $column-gutter/4 !important;
+							}
+
+							// Middle
+							.content {
+								ul.details { display: none; }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+//
+// Custom select
+//
+.no-touch select.custom-select {
+	position: absolute;
+	height: 0;
+	width: 0;
+	left: -900em;
+	opacity: 0;
+	visibility: 0;
+}
+div.custom-select {
+	position: relative;
+	cursor: pointer;
+	min-width: 0px !important;
+	&.open {
+		.selector {
+			position: relative;
+			z-index: 20;
+		}
+		.select-list-wrapper {
+			display: block;
+		}
+	}
+
+	.select-list-wrapper {
+		position: relative;
+		z-index: 10;
+		display: none;
+		margin: -22px 0 0;
+		background: #fff;
+		width: 100% !important;
+		padding: 8px;
+		border: 1px solid #ccc;
+		cursor: pointer;
+		background: #fff;
+		@include border-radius(0 0 4px 4px);
+		ul {
+			margin: 0;
+			li {
+				color: #646464;
+				&.selected,
+				&:hover {
+					color: #000;
+				}
+			}
+		}
+	}
+}
+div.select-list-wrapper {
+	overflow: hidden;
+}
+
+
+
+
+
+

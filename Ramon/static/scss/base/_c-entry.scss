@@ -1,0 +1,66 @@
+//
+// CMS input
+// --------------------------------------------------
+#container #main .c-entry {
+	clear: both;
+	margin: 0 0 15px;
+	border-bottom: 1px solid $grayLight;
+
+	img { margin: 0 0 15px; border: 4px solid $grayLighter; }
+	a img:hover { border-color: $merk-color; }
+
+	h1,h2,h3,h4,h5,h6 {
+		margin: 0 0 5px;
+		padding: 0;
+		color: $merk-color;
+	}
+	h1 {
+		font-size: rem-calc(22px);
+	}
+	h2 {
+		font-size: rem-calc(20px);
+	}
+	h3 {
+		font-size: rem-calc(18px);
+	}
+	h4 {
+		font-size: rem-calc(16px);
+	}
+	h5 {
+		font-size: rem-calc(14px);
+	}
+	h6 {
+		font-size: rem-calc(12px);
+	}
+
+	a {
+		text-decoration: underline;
+		color: $merk-color;
+		&:hover {
+			text-decoration: none;
+			color: darken($merk-color,5%);
+		}
+		&:visited {
+			color: darken($merk-color,15%);
+		}
+	}
+
+	ul {
+		margin: 0;
+		padding: 0 0 15px 15px;
+		list-style: disc;
+	}
+	ol {
+		margin: 0;
+		padding: 0 0 15px 15px;
+		list-style: decimal;
+	}
+	ul,ol {	ul,ol { padding-bottom: 0; } }
+
+	hr {
+		height: 1px;
+		border: none;
+		background: $grayLight;
+		&:after{ display: none; }
+	}
+}

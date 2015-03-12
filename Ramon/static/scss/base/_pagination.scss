@@ -1,0 +1,29 @@
+//
+// pagination.scss
+// --------------------------------------------------
+.pagination {
+	text-align: center;
+	ul li {
+		display: inline-block;
+		&.prev,
+		&.next {
+			margin: 0 3px;
+			width: 15px;
+			text-indent: -900em;
+			background: $default-font-color url(../img/sprite-arrows.png) -8px -27px no-repeat;
+			@include border-radius(50%);
+		}
+		&.next { background-color: $merk-color; background-position: -7px -7px; }
+		a {
+			display: block;
+			padding: 0 4px;
+			line-height: 16px;
+			color: $default-font-color;
+		}
+		&:hover a,
+		&.active a {
+			text-decoration: none;
+			color: $merk-color;
+		}
+	}
+}

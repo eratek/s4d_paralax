@@ -1,0 +1,76 @@
+//
+// Pure CSS energielabels (A-G)
+//
+.energielabel {
+	display: inline-block;
+	width: 40px;
+	height: 20px;
+	line-height: 20px;
+	text-transform: uppercase;
+	font-style: normal;
+	color: #fff;
+	text-align: right;
+	padding: 0 25px 0 0;
+	margin: 0 15px 0 0;
+	position: relative;
+	font-family: Helvetica, Arial, sans-serif;
+
+	&:before {
+		content: "";
+	}
+
+	&:after {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		top: 3px;
+		right: -7px;
+		width: 14px;
+		height: 14px;
+		@include rotate(45deg);
+	}
+
+	&.a {		
+		background: #5bba47;
+		&:before { 	content: "a"; }
+		&:after {	background: #5bba47; }
+	}
+
+	&.b {		
+		background: #73a82e;
+		&:before { 	content: "b"; }
+		&:after {	background: #73a82e; }		
+	}
+
+	&.c {		
+		background: #b0c40b;
+		&:before { 	content: "c"; }
+		&:after {	background: #b0c40b; }		
+	}
+
+	&.d {		
+		background: #f2e51b;
+		&:before { 	content: "d"; }
+		&:after {	background: #f2e51b; }		
+	}
+
+	&.e {		
+		background: #fab618;
+		&:before { 	content: "e"; }
+		&:after {	background: #fab618; }		
+	}
+
+	&.f {		
+		background: #ea631c;
+		&:before { 	content: "f"; }
+		&:after {	background: #ea631c; }		
+	}
+
+	&.g {		
+		background: #e6242b;
+		&:before { 	content: "g"; }
+		&:after {	background: #e6242b; }		
+	}
+}
+
+.lt-ie9 .energielabel:after { display: none !important; }
