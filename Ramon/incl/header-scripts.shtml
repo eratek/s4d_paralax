@@ -5,13 +5,13 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="robots" content="noindex, nofollow">
 
-<meta name="author" content="RW Visions" />
+<meta name="author" content="ElseIf Media" />
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="static/css/style.css" />
 
 <!-- - - - - - - - - - - - -->
-<!-- www.rwvisions.nl 2014 -->
+<!--   ElseIf Media 2015   -->
 <!-- - - - - - - - - - - - -->
 
 <!--[if lt IE 9]>
@@ -40,7 +40,7 @@
 <meta name="msapplication-TileImage" content="/mstile-144x144.png">
 
 
-<!--#set var="WNAAM" value="Demo pagina" -->
-<!--#set var="SLOGAN" value="Een onderzoek naar responsiveness -->
+<!--#set var="WNAAM" value="ElseIf Media " -->
+<!--#set var="SLOGAN" value="jQuery Fastscroll demo-->
 <!--#set var="LOGO" value="width='135' height='188'" -->
 <!--#config timefmt="%Y" -->

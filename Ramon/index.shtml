@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="nl-NL">
+    <head>
+        <!--#include file="incl/header-scripts.shtml" -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title><!--#echo var='WNAAM' --> | <!--#echo var='SLOGAN' --></title>
+        <meta content="ElseIf Media jQuery Fastscroll demo" name="description">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script>
+
+                $(".go-to-page2").click(function(event){
+                    event.preventDefault();
+                    $("body").animate({"scrollTop": "1080px;"}, 3000);
+                });
+        </script>
+
+
+    </head>
+    <body style="height: 2120px; padding: 0; margin: 0;">
+
+        <div id="first-page" style="height: 1080px; background: #000;" ></div>
+        <div id="second-page" style="height: 1080px; background: #667800;" ></div>
+        <a href="#" class="go-to-page2" style="background:#fff; position: fixed; left:0; top:0; height: 50px;">pagina2</a>
+
+
+
+    </body>
+</html>
+
