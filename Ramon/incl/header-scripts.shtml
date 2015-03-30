@@ -23,6 +23,7 @@
 
 <script src="bower_components/modernizr/modernizr.js"></script>
 
+
 <link rel="apple-touch-icon" sizes="57x57" href="static/img/favicon/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="114x114" href="static/img/favicon/apple-touch-icon-114x114.png">
 <link rel="apple-touch-icon" sizes="72x72" href="static/img/favicon/apple-touch-icon-72x72.png">

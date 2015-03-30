@@ -2,7 +2,8 @@
 
 <script src="bower_components/foundation/js/foundation.min.js"></script>
 
-<script src="static/js/vendor/component.slider.js"></script>
+<script src="static/js/vendor/component.fastscroll.js"></script>
+<script src="static/js/vendor/component.parallax.js"></script>
 <script src="static/js/min/plugins.min.js"></script>
 <script src="static/js/min/main.min.js"></script>
 
