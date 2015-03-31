@@ -1,30 +1,9 @@
 /*!
 
  Style.css
- Copyright 2015 Rwvisions.nl
+ Copyright 2015 
 
 */
-
-@import "settings";
-@import "foundation";
-
-
-// Core variable and mixins
-@import "generic/normalize";
-@import "generic/mixins";
-@import "generic/helper";
-
-@import "base/_magnific-popup";
-//@import "base/_jquery-ui";
-
-@import "base/buttons";
-@import "base/fonts";
-@import "base/formulieren";
-//@import "base/energielabels";
-//@import "base/pagination";
-//@import "base/breadcrumb";
-
-//@import "base/c-entry";
 
 // page structure
 @import "components/layout";
@@ -34,14 +13,3 @@
 @import "components/detail";
 
 
-// Modules
-//@import "modules/occasionmodule";
-//@import "modules/occasionmodule-detail";
-//
-//@import "modules/overzicht"; // Nieuws,vacatures,acties
-//
-//@import "modules/actiemodel-detail";
-//@import "modules/modelmodule-detail";
-//@import "modules/verhuurmodule-detail";
-//
-//@import "modules/vestiging";
