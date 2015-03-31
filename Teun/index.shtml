@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="nl-NL">
+<head>
+    <!--#include file="incl/header-scripts.shtml" -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title><!--#echo var='WNAAM' --></title>
+    <meta content="ElseIf Media jQuery Fastscroll demo" name="description">
+
+</head>
+<body>
+
+<!--#include file="incl/footer-scripts.shtml" -->
+</body>
+</html>
