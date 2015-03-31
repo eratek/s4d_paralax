@@ -1,0 +1,323 @@
+//
+// Occasions detail
+// --------------------------------------------------
+.occasions.detail {
+	.model-afb {
+		position: relative;
+		margin: 0 0 20px;
+		border: 10px solid #eee;
+		.circle {
+			position: absolute;
+			display: table;
+			z-index: 100;
+			top: -40px;
+			right: -15px;
+			height: 150px;
+			width: 150px;
+			font-size: 26px;
+			font-weight: 500;
+			line-height: 28px;
+			text-align: center;
+			vertical-align: middle;
+			color: #fff;
+			background: $merk-color;
+			@include border-radius(50%);
+			@include box-shadow(2px 3px 4px #333);
+			@include rotate(11deg);
+			.inner {
+				padding: 0;
+			}
+			span {
+				font-size: 22px;
+				line-height: 24px;
+			}
+		}
+		.inzetjes {
+			position: absolute;
+			right: 10px;
+			bottom: 10px;
+			left: 10px;
+			@media #{$small-only}  { position: static; background: $grayLighter; padding-top: 10px; }
+			div {
+				float: left;
+				width: 50%;
+				padding: 0 5px 0 0;
+				text-align: center;
+				&+div { padding: 0 0 0 5px; }
+
+				h4 {
+					margin: 0;
+					padding: 10px 15px;
+					line-height: 37px;
+					font-size: 24px;
+					font-weight: 500;
+					text-transform: none;
+					color: #343434;
+					background: #eee;
+					background: rgba(238,238,238,.75);
+					@include box-shadow(0 0 3px rgba(0,0,0,.2));
+				}
+			}
+		}
+		.carousel-direction-nav { display: none; }
+	}
+
+	.model-content {
+		padding: 20px 20px 5px;
+		background: $grayDark;
+		@include box-shadow(0 0 5px #666);
+		h1,h2,h3,h4,h5,h6,p,a,ul,label,sup,sub {
+			color: #fff !important;
+			span {
+				font-size: 12px;
+				color: #fff;
+				text-transform: none;
+			}
+		}
+		.nap {
+			margin: 10px 0 20px;
+		}
+		.price.van {
+			margin: 0;
+			font-size: $default-font-size;
+			&+.price sub { font-size: 60%; }
+		}
+		.price {
+			margin-top: 20px;
+			font-size: 31px;
+			@media screen and (max-width: 1150px){
+				sub {
+					width: 100%;
+				}
+			}
+		}
+		.button {
+			width: 100%;
+			&.small { width: auto; color: $default-font-color !important; }
+		}
+		@media screen and (max-width: 1150px){
+			.button.small {
+				width: 100%;
+			}
+		}
+	}
+
+
+
+	//
+	// Carousel
+	//
+	.carousel-direction-nav {  }
+	#carousel-nav {
+		padding: 20px 0 5px;
+		background: $grayDark;
+
+		.large-centered { max-width: 920px; }
+
+		#carousel-album {
+			position: relative;
+			@include clearfix;
+			.carousel-viewport {
+				float: left;
+				@include clearfix;
+				.slides {
+					@media #{$small-only} { width: 100% !important; }
+				}
+			}
+			.carousel-direction-nav {
+				li a {
+					position: absolute;
+					top: 2px;
+					left: -50px;
+					width: 20px;
+					height: 84px;
+					text-indent: -900em;
+					background: url(../img/sprite-icon.png) 0 -316px no-repeat;
+					cursor: pointer;
+					@include transition(all .3s);
+					&.carousel-next {
+						left: auto;
+						right: -50px;
+						background-position: -22px -316px;
+					}
+					&:hover {
+						left: -53px;
+						&.carousel-next { left: auto; right: -53px; }
+					}
+				}
+			}
+		}
+		.slides {
+			display: block;
+			margin: 0;
+			text-align: center;
+			@media #{$small-only} {
+				left: 0 !important;
+				margin-left: 0 !important;
+				-moz-transform: translateX(0px) !important;
+				-webkit-transform: translateX(0px) !important;
+				-o-transform: translateX(0px) !important;
+				-ms-transform: translateX(0px) !important;
+				transform: translateX(0px) !important;
+			}
+			&.horizontal {
+				left: 0 !important;
+				margin-left: 0 !important;
+			}
+			li {
+				display: inline-block;
+				margin: 0 10px 15px 0;
+				overflow: hidden;
+				position: relative;
+				vertical-align: top;
+				a img {
+					position: relative;
+					display: block;
+					border: 5px solid #fff;
+					max-width: 110px;
+					width: 110px;
+				}
+			}
+			&.lightbox {
+				li a:after {
+					position: absolute;
+					bottom: 10px;
+					right: 10px;
+					width: 14px;
+					height: 14px;
+					text-align: center;
+					font: 700 10px/14px arial, Helvetica, Arial, sans-serif;
+					color: #fff;
+					background: $merk-color;
+					content: "+";
+					@include border-radius(50%);
+				}
+				li a:hover:after {
+					background-color: darken($merk-color,5%);
+				}
+			}
+		}
+	}
+
+
+
+	//
+	// gegevens
+	//
+	#gegevens {
+		background: $grayLighter;
+		@include box-shadow(inset 0 0 5px #555);
+		.content {
+			padding: 55px 0 40px;
+		}		
+	}
+
+
+
+	//
+	// opties
+	//
+	#opties {
+		.content { padding: 70px 0 20px; }
+		.tabbable {
+			.tabs li{
+				float: left;
+				margin: 0 20px 0 0;
+				a {
+					font-size: 16px;
+					font-weight: 700;
+					text-transform: uppercase;
+					color: lighten($merk-color,35%);
+					text-decoration: none;
+					@include transition(all .3s);
+					&:hover,
+					&.active { color: $merk-color; }
+				}
+			}
+		}
+	}
+
+
+
+	//
+	// extra-informatie
+	//
+	#extra-informatie {
+		position: relative;
+		background: $grayLighter;
+		&:after {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			width: 1000px;
+			height: 10px;
+			margin: 0 0 0 -1160px;
+			background: $merk-color;
+			content: "";
+		}
+		@media screen and (max-width: 1280px){
+			&:after { display: none; }
+			border-bottom: 10px solid $merk-color;
+		}
+		.row > div.columns {
+			padding-top: 50px;
+			padding-bottom: 30px;
+			/*&:first-child {
+				&:after {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					width: 1000px;
+					height: 10px;
+					margin: 0 0 0 -1160px;
+					background: $merk-color;
+					content: "";
+				}
+			}*/
+			&.info {
+				padding-bottom: 80px;
+			}
+		}
+		.offerte {
+			img { margin: 0 0 30px; }
+			.price {
+				margin: 20px 0 30px;
+				color: $merk-color;
+				font-size: 27px;
+				span {
+					display: inline;
+					font-size: 25px;
+					color: $default-font-color;
+				}
+				sup,sub {
+					display: inline-block;
+					text-transform: none;
+					font-weight: 500;
+					color: $default-font-color;
+				}
+			}
+		}
+	}
+}
+
+//
+// Occasion module op detail pagina's
+//
+.occasions.detail {
+	#occasion-overzicht {
+		background: $grayDark;
+		h1,h2,h3,h4,h5,h6,p,ul,label,sup,sub {
+			color: #fff !important;
+			span {
+				color: #fff !important;
+			}
+		}
+		hr.grey:after {
+			background-color: $grayDark !important;
+			border-color: $grayDark;
+		}
+		#aanbod-container {
+			background: $grayDark;
+		}
+	}
+}
