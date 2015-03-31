@@ -1,8 +1,3 @@
-
-
-# Require any additional compass plugins here.
-add_import_path "bower_components/foundation/scss"
-
 # Set this to the root of your project when deployed:
 http_path = ""
 css_dir = "static/css/"
@@ -21,7 +16,6 @@ environment = :development
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 # line_comments = false
-
 
 # If you prefer the indented syntax, you might want to regenerate this
 # project again passing --syntax sass, or you can uncomment this:

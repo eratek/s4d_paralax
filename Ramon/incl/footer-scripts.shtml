@@ -1,10 +1,4 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-<script src="bower_components/foundation/js/foundation.min.js"></script>
-
-<script src="static/js/vendor/component.fastscroll.js"></script>
-<script src="static/js/vendor/component.parallax.js"></script>
-<script src="static/js/min/plugins.min.js"></script>
-<script src="static/js/min/main.min.js"></script>
-
-<!--[if lt IE 9]><script src="bower_components/rem-unit-polyfill/rem.min.js"></script><![endif]-->
+<script src="static/js/component.fastscroll.js"></script>
+<script src="static/js/component.parallax.js"></script>

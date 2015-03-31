@@ -14,7 +14,14 @@
 <!--   ElseIf Media 2015   -->
 <!-- - - - - - - - - - - - -->
 
-<script src="modernizr/modernizr.js"></script>
+<!--[if lt IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+<script src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"></script>
+<script src="//html5base.googlecode.com/svn-history/r38/trunk/js/selectivizr-1.0.3b.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+<![endif]-->
+
+<script src="bower_components/modernizr/modernizr.js"></script>
 
 
 <link rel="apple-touch-icon" sizes="57x57" href="static/img/favicon/apple-touch-icon-57x57.png">
@@ -35,6 +42,5 @@
 
 
 <!--#set var="WNAAM" value="ElseIf Media " -->
-<!--#set var="SLOGAN" value="jQuery Fastscroll demo-->
 <!--#set var="LOGO" value="width='135' height='188'" -->
 <!--#config timefmt="%Y" -->
