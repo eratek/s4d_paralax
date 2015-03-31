@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="nl-NL">
+    <head>
+        <!--#include file="incl/header-scripts.shtml" -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title><!--#echo var='WNAAM' --> | <!--#echo var='SLOGAN' --></title>
+        <meta content="ElseIf Media jQuery Fastscroll demo" name="description">
+
+    </head>
+
+    <body style="height: 2120px; padding: 0; margin: 0;">
+
+        <div id="first-page" style="height: 1080px; background: #000;" ></div>
+        <div id="second-page" style="height: 1080px; background: #667800;" ></div>
+        <div class="menu-pages" style="background:#fff; position: fixed; left:0; top:0; height: 50px;">
+            <a href="#" id="go-to-page2">pagina2</a><br>
+            <a href="#" class="go-to-page1">pagina1</a>
+        </div>
+
+
+        <!--#include file="incl/footer-scripts.shtml" -->
+    </body>
+</html>
+
