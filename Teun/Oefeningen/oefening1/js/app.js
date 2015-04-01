@@ -1,5 +1,8 @@
 $(function () {
-		$(".guest_box").click(checkForCode);
+
+	var guest_box = $("#main").children('div')
+
+		guest_box.click(checkForCode);
 
 		function getRandom(num) {
 			var my_num = Math.floor(Math.random() * num);
@@ -9,7 +12,7 @@ $(function () {
 		var hideCode = function() {
 			var numRand = getRandom(4);
 			// console.log("Index:", numRand)
-			$(".guest_box").each(function( index, value) {
+			guest_box.each(function( index, value) {
 				if (numRand == index) {
 					$(this).append("<span id='has_discount'></span>");
 					return false
@@ -18,7 +21,7 @@ $(function () {
 		}
 		hideCode();
 
-		$(".guest_box").on("mouseenter", function() {
+		guest_box.on("mouseenter", function() {
 			// console.log("Hover");
 			$(this).addClass('my_hover')
 		}).on("mouseleave", function() {
@@ -36,12 +39,12 @@ $(function () {
 				discount_num = "<p>Sorry, no discount this time!</p>";
 			}
 
-			$(".guest_box").each(function() {
+			guest_box.each(function() {
 				if($.contains(this, document.getElementById("has_discount") ) ) {
-					$(this).addClass('discount');
+					$(this).css('border', '3px solid #0f0');
 				}
 				else {
-					$(this).addClass('no_discount');
+					$(this).css('border', '3px solid #f00');
 				}
 				$(this).unbind('click');
 			});
