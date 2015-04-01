@@ -7,3 +7,9 @@ $(".go-to-page1").click(function(event){
     event.preventDefault();
     $("body").animate({"scrollTop": "0px"}, 1000);
 });
+
+$(".testclass").click(function(event){
+        event.preventDefault();
+        $("body").animate({"scrollTop": "200px"},1500)
+    }
+    )

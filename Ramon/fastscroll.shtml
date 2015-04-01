@@ -10,12 +10,18 @@
 
     <body style="height: 2120px; padding: 0; margin: 0;">
 
-        <div id="first-page" style="height: 1080px; background: #000;" ></div>
+        <div id="first-page" style="height: 1080px; background: #000;" >
+
+        </div>
         <div id="second-page" style="height: 1080px; background: #667800;" ></div>
         <div class="menu-pages" style="background:#fff; position: fixed; left:0; top:0; height: 50px;">
             <a href="#" id="go-to-page2">pagina2</a><br>
             <a href="#" class="go-to-page1">pagina1</a>
         </div>
+
+        <div id="charByte"></div>
+
+
 
 
         <!--#include file="incl/footer-scripts.shtml" -->
