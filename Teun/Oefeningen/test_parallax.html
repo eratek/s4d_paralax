@@ -23,11 +23,16 @@ $( function() {
     console.log("pipo")
     $(window).scroll( function( eventInfo ) { 
         var scrollPos =  $("body").scrollTop();
-        var opa = mapParallax( scrollPos, 0,200, 0.1,0.9);
-        var l   = mapParallax( scrollPos, 50,80, -150,0);
-        var t   = mapParallax( scrollPos, 0,600, 700,300);
+        var opa = mapParallax( scrollPos, 0,200, 1,0);
+        var l   = mapParallax( scrollPos, 0,200, -150,800);
         console.log(eventInfo);
-        $("#roodblokje").css({opacity: opa, left: l, top: t});
+        $("#roodblokje").css(
+          {
+            opacity: opa, 
+            left: l, 
+          });
+        //Fout die Robert maakte.
+        // $("#roodblokje").css('opacity:', opa); ipv $("#roodblokje").css('opacity', opa);
         console.log($("#roodblokje").css("opacity"));
     })   
 })
@@ -42,7 +47,7 @@ body { height: 3000px;
     height: 150px;
     position: absolute;
     top: 200px;
-    left: 0px;
+    left: -1500px;
     background: #f00;
 }
 </style>
