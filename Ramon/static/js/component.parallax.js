@@ -11,7 +11,7 @@ function mapPar(x, in_min,  in_max,  out_min,  out_max){
 $( function() {
     $(window).scroll( function( eventInfo ) {
         var scrollPos =  $("body").scrollTop();
-        var topSide    = mapPar(scrollPos, 0,200, 200,1000);
+        var topSide    = mapPar(scrollPos, 0,3300, 200,3700);
         $("#charByte").css("top", topSide);
         var scrollBlock = mapPar(scrollPos, 0,200);
 
