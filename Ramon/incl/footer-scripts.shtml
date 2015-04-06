@@ -3,3 +3,4 @@
 <script src="static/js/component.fastscroll.js"></script>
 <script src="static/js/component.parallax.js"></script>
 <script src="static/js/component.loader.js"></script>
+<script src="static/js/component.scrolllock.js"></script>

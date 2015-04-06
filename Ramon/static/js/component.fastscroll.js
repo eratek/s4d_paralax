@@ -10,6 +10,6 @@ $(".go-to-page1").click(function(event){
 
 $(".testclass").click(function(event){
         event.preventDefault();
-        $("body").animate({"scrollTop": "200px"},1500)
+        $("body").animate({"scrollTop": "300px"},1500)
     }
     )

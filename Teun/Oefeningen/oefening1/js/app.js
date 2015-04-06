@@ -1,46 +1,40 @@
 $(function () {
 
-	var guest_box = $("#main").children('div')
+	var guestDisc = $("#main").children("div");
 
-		guest_box.click(checkForCode);
+    guestDisc.click(checkForCode);
 
 		function getRandom(num) {
-			var my_num = Math.floor(Math.random() * num);
-			return my_num;
+			return Math.floor(Math.random() * num);
 		}
 
 		var hideCode = function() {
-			var numRand = getRandom(4);
-			// console.log("Index:", numRand)
-			guest_box.each(function( index, value) {
-				if (numRand == index) {
-					$(this).append("<span id='has_discount'></span>");
+            guestDisc.each(function( index, value) {
+				if (getRandom(4) == index) {
+					$(this).append("<span id='hasDiscount'></span>");
 					return false
 				};
 			});
 		}
 		hideCode();
 
-		guest_box.on("mouseenter", function() {
-			// console.log("Hover");
-			$(this).addClass('my_hover')
+        guestDisc.on("mouseenter", function() {
+			$(this).addClass("my_hover");
 		}).on("mouseleave", function() {
-			// console.log("Hover out");
-			$(this).removeClass('my_hover')
+			$(this).removeClass("my_hover");
 		});
 			
 		function checkForCode() {
-			var discount_num;
-			if($.contains(this, document.getElementById("has_discount") ) ) {
-				var my_num = getRandom(100);
-				discount_num = "<p>Your code: CODE"+my_num+"</p>";
+			var discountNum;
+			if($.contains(this, $("#hasDiscount") ) ) {
+                discountNum = "<p>Your code: CODE"+ getRandom(100) +"</p>";
 			}
 			else {
-				discount_num = "<p>Sorry, no discount this time!</p>";
+                discountNum = "<p>Sorry, no discount this time!</p>";
 			}
 
-			guest_box.each(function() {
-				if($.contains(this, document.getElementById("has_discount") ) ) {
+            guestDisc.each(function() {
+				if($.contains(this, $("#hasDiscount") ) ) {
 					$(this).css('border', '3px solid #0f0');
 				}
 				else {
@@ -48,7 +42,7 @@ $(function () {
 				}
 				$(this).unbind('click');
 			});
-			$("#result").append(discount_num)
+			$("#result").append(discountNum);
 		}
 
 	});
