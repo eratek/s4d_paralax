@@ -1,10 +1,5 @@
 $("body").ready(function(){
     setTimeout(function(){
-        $(".testclass").css("visibility", "visible");
+        $("btnLoadScroll").css("visibility", "visible");
 })
-})
-
-$(function(){
-
-
 })

@@ -13,7 +13,5 @@ $( function() {
         var scrollPos =  $("body").scrollTop();
         var topSide    = mapPar(scrollPos, 0,3300, 200,3700);
         $("#charByte").css("top", topSide);
-        var scrollBlock = mapPar(scrollPos, 0,200);
-
     })
 })
