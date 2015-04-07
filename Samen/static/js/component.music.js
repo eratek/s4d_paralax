@@ -15,6 +15,6 @@ $(function () {
       console.log("click1");
   }, function() {
 	    // audioElement.pause();
-  	console.log("click2");
+	  	console.log("click2");
   });
 });
