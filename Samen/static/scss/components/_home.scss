@@ -40,6 +40,20 @@
   border: none;
 }
 
-.mute {
-  text-decoration: underline;
+#music_btn{
+  width: 50px;
+  height: 50px;
+  right: 10px;
+  top: 10px;
+  position: fixed;
 }
+
+.play{
+  background: url("../img/btnPlay.svg") no-repeat;
+}
+
+.mute {
+  background: url("../img/btnPauze.svg") no-repeat;
+
+}
+
