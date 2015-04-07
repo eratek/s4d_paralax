@@ -1,1 +1,1 @@
-$(function(){$("#music_btn").click(function(){$(this).toggleClass("mute")})});
+$(function(){var t=document.createElement("audio");t.setAttribute("src","audio.mp3"),t.setAttribute("autoplay","autoplay"),t.load(),$.get(),t.addEventListener("load",function(){t.play()},!0),$("#music_btn").click(function(){$(this).toggleClass("mute")})});
