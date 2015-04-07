@@ -18,7 +18,7 @@ $(function () {
 		}
 		hideCode();
 
-        guestDisc.on("mouseenter", function() {
+    guestDisc.on("mouseenter", function() {
 			$(this).addClass("my_hover");
 		}).on("mouseleave", function() {
 			$(this).removeClass("my_hover");
@@ -33,7 +33,7 @@ $(function () {
                 discountNum = "<p>Sorry, no discount this time!</p>";
 			}
 
-            guestDisc.each(function() {
+      guestDisc.each(function() {
 				if($.contains(this, $("#hasDiscount") ) ) {
 					$(this).css('border', '3px solid #0f0');
 				}

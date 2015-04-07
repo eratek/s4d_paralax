@@ -1,12 +1,20 @@
-var audio = document.createElement("audio");
-audio.src = "files/windows%20default.mp3";
+$(function () {
+ var audioElement = document.createElement('audio');
+  audioElement.setAttribute('src', 'audio.mp3');
+  audioElement.setAttribute('autoplay', 'autoplay');
+  //audioElement.load()
 
-delay(500).audio.play();
+  $.get();
 
-$('#play_audio').click(function () {
-    var audio = document.createElement("audio");
-    audio.src = "files/windows%20default.mp3";
+  audioElement.addEventListener("load", function() {
+      audioElement.play();
+  }, true);
 
-    audio.muted();
-
+  $('.musix_btn').toggle(function() {
+      // audioElement.play();
+      console.log("click1");
+  }, function() {
+	    // audioElement.pause();
+  	console.log("click2");
+  });
 });
