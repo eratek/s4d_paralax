@@ -4,10 +4,26 @@
     <!--#include file="incl/header-scripts.shtml" -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title><!--#echo var='WNAAM' --></title>
-    <meta content="ElseIf Media jQuery Fastscroll demo" name="description">
+    <meta content="Byte en het verhaal van het programmeren" name="description">
 
 </head>
 <body>
+<div id="container">
+    <div id="startParallax">
+        <div id="charByte"></div>
+        <button id="btnLoadScroll"></button>
+    </div>
+    <div id="skyFall"></div>
+    <div id="computerScreen">
+        <div id="computerScreenTopBar">
+
+        </div>
+
+    </div>
+</div>
+
+
+
 
 <!--#include file="incl/footer-scripts.shtml" -->
 </body>
