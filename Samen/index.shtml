@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 <html lang="nl-NL">
 <head>
-    <!--#include file="incl/header-scripts.shtml" -->
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="robots" content="noindex, nofollow">
+
+    <meta name="author" content="ElseIf Media" />
+
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title><!--#echo var='WNAAM' --></title>
+    <title>Byte en het verhaal van het programmeren</title>
     <meta content="Byte en het verhaal van het programmeren" name="description">
 
 </head>
@@ -16,15 +29,18 @@
     <div id="skyFall"></div>
     <div id="computerScreen">
         <div id="computerScreenTopBar">
-            <button class="music_btn"></button>
-        </div>
 
+        </div>
     </div>
 </div>
 
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-
-<!--#include file="incl/footer-scripts.shtml" -->
+<script src="static/js/component.fastscroll.js"></script>
+<script src="static/js/component.parallax.js"></script>
+<script src="static/js/component.loader.js"></script>
+<script src="static/js/component.scrolllock.js"></script>
+<script src="static/js/component.music.js"></script>
 </body>
 </html>
