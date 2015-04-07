@@ -10,7 +10,7 @@ $(function () {
       audioElement.play();
   }, true);
 
-  $('.musix_btn').toggle(function() {
+  $('.music_btn').toggle(function() {
       // audioElement.play();
       console.log("click1");
   }, function() {
