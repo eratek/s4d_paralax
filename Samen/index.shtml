@@ -23,9 +23,11 @@
 <body>
 <div id="container">
     <div id="startParallax">
-        <div id="music_btn">Music</div>
+        <div id="music_btn"></div>
+
         <div id="charByte"></div>
-        <button id="btnLoadScroll"></button>
+        <canvas id="loader"></canvas>
+        <div id="btnScroll"></div>
     </div>
     <div id="skyFall"></div>
     <div id="computerScreen">
@@ -36,6 +38,7 @@
 </div>
 
 
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 <script src="static/js/component.fastscroll.js"></script>
@@ -43,5 +46,14 @@
 <script src="static/js/component.loader.js"></script>
 <script src="static/js/component.scrolllock.js"></script>
 <script src="static/js/component.music.js"></script>
+
+<script>
+
+    $(document).ready(function() {
+        $('#loader').paraLoader();
+    });
+
+</script>
+
 </body>
 </html>
