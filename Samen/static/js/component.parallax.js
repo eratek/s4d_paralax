@@ -88,7 +88,10 @@ function clouds(){
 
 
 }
-if($("startParallax").offset().top > 0 && $("startParallax").offset().top > 960 ){
+
+var pixelLocation =  $("startParallax").offset();
+
+if(pixelLocation.top > 0 && pixelLocation.top > 960 ){
     clouds();
 }
 
