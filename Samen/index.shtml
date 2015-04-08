@@ -41,6 +41,7 @@
     </div>
 </div>
 
+<!-- om de loader te kunnen testen.-->
 <div class="gallery">
     <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image1.jpg">
     <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image2.jpg">
@@ -50,6 +51,7 @@
     <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image6.jpg">
     <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image7.jpg">
 </div>
+<!-- om de loader te kunnen testen.-->
 
 
 
@@ -59,7 +61,7 @@
 <script src="static/js/component.parallax.js"></script>
 <script src="static/js/component.loader.js"></script>
 <script src="static/js/component.scrolllock.js"></script>
-<script src="static/js/component.music.js"></script>
+<!--<script src="static/js/component.music.js"></script>-->
 
 <script>
     $(document).ready(function() {
