@@ -59,21 +59,12 @@ body{
  }
 
 #music_btn{
-  width: 50px;
-  height: 50px;
-  right: 10px;
-  top: 10px;
+  width: 47px;
+  height: 37px;
+  right: 20px;
+  top: 15px;
   position: fixed;
-  background: url("../img/btnPlay.svg") no-repeat;
-}
-
-.play{
-
-}
-
-.mute {
-  background: url("../img/btnPauze.svg") no-repeat;
-
+  background: url("../img/music_btn.png") no-repeat 0 0;
 }
 
 @font-face {
