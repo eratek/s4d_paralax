@@ -12,14 +12,15 @@ $(function () {
 
         var musicState = true;
         $('#music_btn').click(function() {
-            if (musicState == true) {
+            if (musicState === true) {
               audioElement.pause();
               musicState = false;
+              $(this).css('background', 'url("static/img/music_btn.png") no-repeat -65px 0');
             }
-            else
-            {
+            else {
               audioElement.play();
               musicState = true;
+              $(this).css('background', 'url("static/img/music_btn.png") no-repeat 0 0');
             }
         });
 

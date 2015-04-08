@@ -23,7 +23,7 @@
 <body>
 <div id="container">
     <div id="startParallax">
-        <div id="music_btn">Music</div>
+        <div id="music_btn"></div>
         <div id="charByte"></div>
         <button id="btnLoadScroll"></button>
     </div>
