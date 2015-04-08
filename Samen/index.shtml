@@ -66,13 +66,11 @@
 <script>
     $(document).ready(function() {
 
-        var loader = $("body").DEPreLoad({
+        var loader = $("body").parLoader({
             OnStep: function(percent) {
-                console.log(percent + '%');
                 $("#depreload .perc").text(percent );
             },
             OnComplete: function() {
-                console.log('Everything loaded!');
                 $("#depreload .perc").animate({ opacity: 0 });
                 $("#depreload .loading").animate({ opacity: 0 });
             }

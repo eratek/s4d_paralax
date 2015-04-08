@@ -53,6 +53,8 @@ $( function() {
         $("#charByte").css("top", topSide);
     })
 })
+
+
 /*
 $( function() {
     $(window).scroll( function( eventInfo ) {
@@ -76,6 +78,19 @@ $("#btnLoadScroll").click(function(){
 
     return false;
 });*/
+
+function getRandom(num) {
+    var randomNum = Math.floor(Math.random() * num);
+    return randomNum;
+}
+
+function clouds(){
+
+
+}
+if($("startParallax").offset().top > 0 && $("startParallax").offset().top > 960 ){
+    clouds();
+}
 
 
 

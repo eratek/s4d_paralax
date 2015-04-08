@@ -40,7 +40,7 @@
         $(new Image()).load(loadComplete).error(loadComplete).attr('src', url);
     };
 
-    $.fn.DEPreLoad = function(options) {
+    $.fn.parLoader = function(options) {
         return this.each(function() {
             /* Set Callbacks */
             if (typeof(options.OnStep) !== "undefined") OnStep = options.OnStep;
