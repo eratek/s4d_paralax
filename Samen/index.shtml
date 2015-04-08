@@ -15,6 +15,8 @@
 
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css/style.css" />
+
+    <link rel="stylesheet" type="text/css" href="liftOff.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Byte en het verhaal van het programmeren</title>
     <meta content="Byte en het verhaal van het programmeren" name="description">
@@ -24,10 +26,12 @@
 <div id="container">
     <div id="startParallax">
         <div id="music_btn"></div>
-
         <div id="charByte"></div>
-        <canvas id="loader"></canvas>
-        <div id="btnScroll"></div>
+        <div id="btnScroll">
+            <div id="depreload" class="table">
+                <div class="perc"></div>
+            </div>
+        </div>
     </div>
     <div id="skyFall"></div>
     <div id="computerScreen">
@@ -35,6 +39,16 @@
 
         </div>
     </div>
+</div>
+
+<div class="gallery">
+    <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image1.jpg">
+    <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image2.jpg">
+    <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image3.jpg">
+    <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image4.jpg">
+    <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image5.jpg">
+    <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image6.jpg">
+    <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image7.jpg">
 </div>
 
 
@@ -48,11 +62,20 @@
 <script src="static/js/component.music.js"></script>
 
 <script>
-
     $(document).ready(function() {
-        $('#loader').paraLoader();
-    });
 
+        var loader = $("body").DEPreLoad({
+            OnStep: function(percent) {
+                console.log(percent + '%');
+                $("#depreload .perc").text(percent );
+            },
+            OnComplete: function() {
+                console.log('Everything loaded!');
+                $("#depreload .perc").animate({ opacity: 0 });
+                $("#depreload .loading").animate({ opacity: 0 });
+            }
+        });
+    });
 </script>
 
 </body>
