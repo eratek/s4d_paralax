@@ -61,7 +61,7 @@
 <script src="static/js/component.parallax.js"></script>
 <script src="static/js/component.loader.js"></script>
 <script src="static/js/component.scrolllock.js"></script>
-<!--<script src="static/js/component.music.js"></script>-->
+<script src="static/js/component.music.js"></script>
 
 <script>
     $(document).ready(function() {
