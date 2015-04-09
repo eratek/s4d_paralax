@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="nl-NL">
+<head>
+
+    <meta name="author" content="ElseIf Media" />
+
+    <title>Byte en het verhaal van het programmeren</title>
+    <meta content="Byte en het verhaal van het programmeren" name="description">
+
+</head>
+<body style="margin:0;">
+<div id="container" style="height: 200%; background: #000000; min-height: 100%; width:100%; position: absolute; ">
+reger
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+
+    $(window).scroll(function (event) {
+        var scroll = $("body").scrollTop();
+        if(scroll > 200){
+            alert("test");
+        }
+    });
+</script>
+
+
+
+</body>
+</html>
