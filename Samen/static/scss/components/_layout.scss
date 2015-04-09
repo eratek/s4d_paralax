@@ -13,6 +13,30 @@ body{
 #startParallax{
   background: #5790d7;
   height: 960px;
+
+  #btnScroll{
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    background: #ff1e1e;
+    text-align: center;
+    left: calc(50% - 75px);
+    top: calc(50% + 75px);
+    position: relative;
+    z-index: 2;
+
+    .perc{
+      border-radius: 50%;
+      width: 75px;
+      height: 19px;
+      background: #ff1e1e;
+      padding: 28px 0;
+      font-family: wellbutrinregular ;
+      font-size: 18px;
+      color: #e7e0e0;
+      z-index: 3;
+    }
+  }
 }
 
 #skyFall{
@@ -33,30 +57,6 @@ body{
   position: relative;
   margin: 0px auto;
 }
-
-#btnScroll{
-   border-radius: 50%;
-   width: 75px;
-   height: 75px;
-   background: #ff1e1e;
-  text-align: center;
-   margin: 0 auto;
-   bottom: 20px;
-   position: relative;
-   z-index: 2;
-
-  .perc{
-    border-radius: 50%;
-    width: 75px;
-    height: 19px;
-    background: #ff1e1e;
-    padding: 28px 0;
-    font-family: wellbutrinregular ;
-    font-size: 18px;
-    color: #e7e0e0;
-    z-index: 3;
-  }
- }
 
 #music_btn{
   width: 47px;

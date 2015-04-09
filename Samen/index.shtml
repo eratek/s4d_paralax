@@ -43,13 +43,13 @@
 
 <!-- om de loader te kunnen testen.-->
 <div class="gallery">
-    <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image1.jpg">
-    <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image2.jpg">
-    <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image3.jpg">
-    <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image4.jpg">
-    <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image5.jpg">
-    <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image6.jpg">
-    <img src="https://github.com/wearede/DePreLoad.js/blob/master/demo/stock/image7.jpg">
+    <img src="static/img/loadertest/flower.jpg">
+    <img src="static/img/loadertest/flowers.jpg">
+    <img src="static/img/loadertest/tiger.jpg">
+    <img src="static/img/loadertest/night.jpg">
+    <img src="static/img/loadertest/sunset.jpg">
+    <img src="static/img/loadertest/surf.jpg">
+    <img src="static/img/loadertest/water.jpg">
 </div>
 <!-- om de loader te kunnen testen.-->
 
