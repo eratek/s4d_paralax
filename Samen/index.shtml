@@ -13,10 +13,9 @@
 
 
 
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css/style.css" />
 
-    <link rel="stylesheet" type="text/css" href="liftOff.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Byte en het verhaal van het programmeren</title>
     <meta content="Byte en het verhaal van het programmeren" name="description">
@@ -43,13 +42,13 @@
 
 <!-- om de loader te kunnen testen.-->
 <div class="gallery">
-    <img src="static/img/loadertest/flower.jpg">
-    <img src="static/img/loadertest/flowers.jpg">
-    <img src="static/img/loadertest/tiger.jpg">
-    <img src="static/img/loadertest/night.jpg">
-    <img src="static/img/loadertest/sunset.jpg">
-    <img src="static/img/loadertest/surf.jpg">
-    <img src="static/img/loadertest/water.jpg">
+    <img src="static/img/loadertest/flower.jpg" width="100%" style="visibility: hidden">
+    <img src="static/img/loadertest/flowers.jpg" width="100%" style="visibility: hidden">
+    <img src="static/img/loadertest/tiger.jpg" width="100%" style="visibility: hidden">
+    <img src="static/img/loadertest/night.jpg" width="100%" style="visibility: hidden">
+    <img src="static/img/loadertest/sunset.jpg" width="100%" style="visibility: hidden">
+    <img src="static/img/loadertest/surf.jpg" width="100%" style="visibility: hidden">
+    <img src="static/img/loadertest/water.jpg" width="100%" style="visibility: hidden">
 </div>
 <!-- om de loader te kunnen testen.-->
 

@@ -12,7 +12,9 @@ body{
 
 #startParallax{
   background: #5790d7;
-  height: 960px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 
   #btnScroll{
     border-radius: 50%;
@@ -41,11 +43,18 @@ body{
 
 #skyFall{
   height: 2330px;
+  bottom: 100%;
+  background: #000000;
+  position: static;
+
 }
 
 #computerScreen{
   background: url("../img/computerscreen.png") no-repeat center center;
-  height: 960px;
+  height: 100%;
+  top: 2400px;
+  width: 100%;
+  position: absolute;
 }
 
 #computerScreenTopBar{
@@ -53,7 +62,7 @@ body{
   height: 58px;
   width: 200px;
   z-index: 3;
-  top:10%;
+  top:102px;
   position: relative;
   margin: 0px auto;
 }
