@@ -51,8 +51,31 @@ $( function() {
         var scrollPos =  $("body").scrollTop();
         var topSide    = mapPar(scrollPos, 0,3300, 200,3700);
         $("#charByte").css("top", topSide);
+
+        console.log(scrollPos);
+        if(scrollPos >= 2400){
+            console.log("if statement fixed");
+            $("#computerScreen").css("position", "fixed");
+            $("#computerScreen").css("top", "0");
+        } else {
+            console.log("if statement absolute");
+            $("#computerScreen").css("position", "absolute");
+            $("#computerScreen").css("top", "2400px");
+        }
+       /* if (scrollPos >= 0 && scrollPos < 3250) {
+            $("body").css("overflow", "hidden");
+        } else {
+            $(document).unbind('scroll');
+            $("body").css("overflow", "visible");
+            if(scrollPos > 3250){
+
+            }
+        }
+*/
     })
 })
+
+
 
 
 /*
@@ -84,7 +107,7 @@ function getRandom(num) {
     return randomNum;
 }
 
-function clouds(){
+/*function clouds(){
 
 
 }
@@ -93,7 +116,7 @@ var pixelLocation =  $("startParallax").offset();
 
 if(pixelLocation.top > 0 && pixelLocation.top > 960 ){
     clouds();
-}
+}*/
 
 
 
