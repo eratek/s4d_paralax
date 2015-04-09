@@ -1,7 +1,6 @@
 var scrollPos = $("body").scrollTop();
-console.log(scrollPos);
 
-function a() {
+function scrollLock() {
     if (scrollPos >= 0 && scrollPos < 200) {
         $("body").css("overflow", "hidden");
     } else {
@@ -9,4 +8,8 @@ function a() {
         $("body").css("overflow", "visible");
     }
 }
+
+
+
+
 

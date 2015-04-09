@@ -49,6 +49,16 @@ function mapPar(x, in_min,  in_max,  out_min,  out_max, easeFunction){
 $( function() {
     $(window).scroll( function( eventInfo ) {
         var scrollPos =  $("body").scrollTop();
+        var topSide    = mapPar(scrollPos, 0,3300, 200,3700);
+        $("#charByte").css("top", topSide);
+    })
+})
+
+
+/*
+$( function() {
+    $(window).scroll( function( eventInfo ) {
+        var scrollPos =  $("body").scrollTop();
         var topSide    = mapPar(scrollPos, 0,3300, 200,3700, easingFunctions.easeInOutQuad);
         $("#charByte").css("top", topSide);
     })
@@ -56,8 +66,34 @@ $( function() {
 
 $("#btnLoadScroll").click(function(event){
         event.preventDefault();
-        $("body").animate({"scrollTop": "3280px"}, easingFunctions.easeInOutQuad)
+        $("body").animate({"scrollTop": "3280px"}, 6000, "easeOutExpo" )
     }
 )
+
+
+$("#btnLoadScroll").click(function(){
+    $('body').animate({
+        scrollTop: "3280px"
+    },500, 'easeOutBounce');
+
+    return false;
+});*/
+
+function getRandom(num) {
+    var randomNum = Math.floor(Math.random() * num);
+    return randomNum;
+}
+
+function clouds(){
+
+
+}
+
+var pixelLocation =  $("startParallax").offset();
+
+if(pixelLocation.top > 0 && pixelLocation.top > 960 ){
+    clouds();
+}
+
 
 

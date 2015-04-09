@@ -58,9 +58,9 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/style.scss",
-		"outputAbbreviatedPath": "\/Volumes\/Data\/school\/jaar4\/Minor\/project_small\/parallax\/s4d_paralax\/Teun\/static\/css\/style.css",
-		"outputPathIsOutsideProject": 1,
-		"outputPathIsSetByUser": 1,
+		"outputAbbreviatedPath": "\/css\/style.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
 		"outputStyle": 3,
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
@@ -76,7 +76,7 @@
 	"bowerAbbreviatedPath": "",
 	"displayValue": "scss",
 	"displayValueWasSetByUser": 0,
-	"iconImageName": "globe_gray"
+	"iconImageName": "compass_blue"
 	},
 "projectSettings": {
 	"alwaysUseExternalServer": 0,
