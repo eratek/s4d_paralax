@@ -20,8 +20,8 @@ body{
     height: 75px;
     background: #ff1e1e;
     text-align: center;
-    left: calc(50% - 75px);
-    top: calc(50% + 75px);
+    left: calc(50% - 75px / 2);
+    top: 57%;
     position: relative;
     z-index: 2;
 
