@@ -1,7 +1,7 @@
 $(function () {
     var audioElement = document.createElement('audio');
     audioElement.setAttribute('src', 'static/audio/bensound-funnysong.mp3');
-    audioElement.setAttribute('autoplay', 'autoplay');
+    // audioElement.setAttribute('autoplay', 'autoplay');
     // audioElement.load()
 
     $.get();
