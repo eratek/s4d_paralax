@@ -1,5 +1,5 @@
-var easingFunctions =  {
-    // t: current time, b: begInnIng value, c: change In value, d: duration
+var easingFunctions = {
+        // t: current time, b: begInnIng value, c: change In value, d: duration
     
     def: 'easeOutQuad',
     swing: function (x, t, b, c, d) {
@@ -152,20 +152,34 @@ function mapPar(x, in_min,  in_max,  out_min,  out_max, easeFunction){
 }
 
 $( function() {
-    $(window).scroll( function( eventInfo ) {
-        var scrollPos =  $("body").scrollTop();
-        var topSide    = mapPar(scrollPos, 0,3300, 200,3700);
-        $("#charByte").css("top", topSide);
-    })
+    $( "#clickme" ).click(function() {
+      $( "#test" ).animate({
+        height: "toggle"
+      }, 1500, "swing", function() {
+        // Animation complete.
+        console.log("animate is klaar")
+      });
+    });
 });
 
-$("#btnScroll").click(function(event){
-      event.preventDefault();
-      $("body").animate({"scrollTop": "3280px"},6000)
-      $("#btnScroll").animate({ opacity: 0 });
- });
+// $( function() {
+//     $(window).scroll( function( eventInfo ) {
+//         var scrollPos =  $("body").scrollTop();
+//         var topSide    = mapPar(scrollPos, 0,3300, 200,3700);
+//         $("#charByte").css("top", topSide);
+//     })
+// });
 
+// $("#btnScroll").click(function(event){
+//       event.preventDefault();
+//       $("body").animate({"scrollTop": "3280px"},6000)
+//       $("#btnScroll").animate({ opacity: 0 });
+//  });
+
+ // console.log(easingFunctions.easeOutBounce(0, 0, 0.24, 1, 1))
  // console.log( mapPar($("body").scrollTop(), 0,3300, 200,3700) )
+ console.log()
+ 
 
 
 /*
