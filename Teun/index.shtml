@@ -34,14 +34,11 @@
     </div>
     <div id="skyFall"></div>
     <div id="computerScreen">
-        <div id="computerScreenTopBar">
-
-        </div>
     </div>
 </div>
 
 <!-- om de loader te kunnen testen.-->
-<div class="gallery">
+<!-- <div class="gallery">
     <img src="static/img/loadertest/flower.jpg" width="100%" style="visibility: hidden">
     <img src="static/img/loadertest/flowers.jpg" width="100%" style="visibility: hidden">
     <img src="static/img/loadertest/tiger.jpg" width="100%" style="visibility: hidden">
@@ -49,7 +46,7 @@
     <img src="static/img/loadertest/sunset.jpg" width="100%" style="visibility: hidden">
     <img src="static/img/loadertest/surf.jpg" width="100%" style="visibility: hidden">
     <img src="static/img/loadertest/water.jpg" width="100%" style="visibility: hidden">
-</div>
+</div> -->
 <!-- om de loader te kunnen testen.-->
 
 

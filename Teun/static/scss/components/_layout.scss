@@ -55,16 +55,7 @@ body{
   top: 2400px;
   width: 100%;
   position: absolute;
-}
-
-#computerScreenTopBar{
-  background-color: #4d4d4d;
-  height: 58px;
-  width: 200px;
-  z-index: 3;
-  top:102px;
-  position: relative;
-  margin: 0px auto;
+  z-index: 5;
 }
 
 #music_btn{
