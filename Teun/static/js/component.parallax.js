@@ -1,4 +1,5 @@
 var easingFunctions = {
+    // x: optioneel t: current time, b: begInnIng value, c: change In value, d: duration
     easeInQuad: function (x, t, b, c, d) {
         return c*(t/=d)*t + b;
     },
@@ -127,11 +128,11 @@ var easingFunctions = {
 
 
 function mapPar(x, in_min,  in_max,  out_min,  out_max, easeFunction){
-    if(x < in_min){
-        return x = out_min;
+    if( x < in_min) {
+        return out_min;
     }
-    if(x > in_max){
-        return x = out_max;
+    if( x > in_max) {
+        return out_max;
     }
 
     var easingInput = (x-in_min) / (in_max - in_min);
@@ -139,6 +140,7 @@ function mapPar(x, in_min,  in_max,  out_min,  out_max, easeFunction){
     //return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
     var outputVoorEasing = (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
     if(easeFunction !== undefined) {
+        // t: current time, b: begInnIng value, c: change In value, d: duration
         return  easeFunction(0,easingInput,0,1,1) * outputVoorEasing;
     } else {
         return outputVoorEasing;
@@ -150,14 +152,17 @@ $( function() {
         var scrollPos =  $("body").scrollTop();
         var topSide    = mapPar(scrollPos, 0,3300, 200,3700,easingFunctions.easeInOutBounce);
         $("#charByte").css("top", topSide);
+        //$("#charByte").css("left", mapPar(scrollPos, 3300,4000, 200,500),"top", mapPar(scrollPos, 3300,6600, 3700,7900));
 
-        console.log(scrollPos);
+
+        // console.log(scrollPos);
+        console.log(mapPar(scrollPos, 0,3300, 200,3700,easingFunctions.easeInOutBounce))
         if(scrollPos >= 2400){
-            console.log("if statement fixed");
+            // console.log("if statement fixed");
             $("#computerScreen").css("position", "fixed");
             $("#computerScreen").css("top", "0");
         } else {
-            console.log("if statement absolute");
+            // console.log("if statement absolute");
             $("#computerScreen").css("position", "absolute");
             $("#computerScreen").css("top", "2400px");
         }
@@ -173,6 +178,15 @@ $( function() {
 */
     })
 })
+
+$("#btnScroll").click(function(event){
+      event.preventDefault();
+      $("body").animate({"scrollTop": "3280px"},6000)
+ });
+
+$("#btnScroll").click(function(){
+    $("#btnScroll").animate({ opacity: 0 });
+});
 
 
 

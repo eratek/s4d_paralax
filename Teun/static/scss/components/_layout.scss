@@ -44,8 +44,16 @@ body{
 #skyFall{
   height: 2330px;
   bottom: 100%;
-  background: #000000;
   position: static;
+
+  background: #5791d7;
+  background: -moz-linear-gradient(top, #5791d7 50%, #aac2e0 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(50%, #5791d7), color-stop(100%, #aac2e0));
+  background: -webkit-linear-gradient(top, #5791d7 50%, #aac2e0 100%);
+  background: -o-linear-gradient(top, #5791d7 50%, #aac2e0 100%);
+  background: -ms-linear-gradient(top, #5791d7 50%, #aac2e0 100%);
+  background: linear-gradient(to bottom, #5791d7 50%, #aac2e0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5791d7', endColorstr='#aac2e0', GradientType=0 );
 
 }
 
