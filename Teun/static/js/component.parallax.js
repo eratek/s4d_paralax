@@ -150,13 +150,13 @@ function mapPar(x, in_min,  in_max,  out_min,  out_max, easeFunction){
 $( function() {
     $(window).scroll( function( eventInfo ) {
         var scrollPos =  $("body").scrollTop();
-        var topSide    = mapPar(scrollPos, 0,3300, 200,3700,easingFunctions.easeInOutBounce);
+        var topSide    = mapPar(scrollPos, 0,3300, 200,3700,easingFunctions.easeInOutQuad);
         $("#charByte").css("top", topSide);
         //$("#charByte").css("left", mapPar(scrollPos, 3300,4000, 200,500),"top", mapPar(scrollPos, 3300,6600, 3700,7900));
 
 
         // console.log(scrollPos);
-        console.log(mapPar(scrollPos, 0,3300, 200,3700,easingFunctions.easeInOutBounce))
+        // console.log(mapPar(scrollPos, 0,3300, 200,3700,easingFunctions.easeInOutBounce))
         if(scrollPos >= 2400){
             // console.log("if statement fixed");
             $("#computerScreen").css("position", "fixed");
