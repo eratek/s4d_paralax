@@ -2,7 +2,7 @@
 // Layout.scss
 // --------------------------------------------------
 body{
-  height: 4320px;
+  height: 10320px;
   margin: 0px;
 }
 
@@ -23,7 +23,9 @@ body{
     background: #ff1e1e;
     text-align: center;
     left: calc(50% - 75px / 2);
-    top: 57%;
+    // Top Kan geen percentage zijn want je weet niet hoe groot de body en het scherm is.
+    // Kunnen proberen of we met modernizr kunnen kijken wat de scherm maat is en daarop de top aan te passen.
+    top: 200px;
     position: relative;
     z-index: 2;
 
@@ -86,4 +88,14 @@ body{
   font-weight: normal;
   font-style: normal;
 
+}
+
+#backgroundScene1 {
+  width: 1130px;
+  height: 550px;
+  left: -1130px;
+  // top: 3174px;
+  background-color: #000;
+  // z-index: 6;
+  position: relative;
 }

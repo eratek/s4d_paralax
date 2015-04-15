@@ -137,35 +137,64 @@ function mapPar(x, in_min,  in_max,  out_min,  out_max, easeFunction){
 
     var easingInput = (x-in_min) / (in_max - in_min);
 
-    //return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-    var outputVoorEasing = (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-    if(easeFunction !== undefined) {
-        // t: current time, b: begInnIng value, c: change In value, d: duration
-        return  easeFunction(0,easingInput,0,1,1) * outputVoorEasing;
-    } else {
-        return outputVoorEasing;
-    }
+    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    // var outputVoorEasing = (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    // if(easeFunction !== undefined) {
+    //     // t: current time, b: begInnIng value, c: change In value, d: duration
+    //     return  easeFunction(0,easingInput,0,1,1) * outputVoorEasing;
+    // } else {
+    //     return outputVoorEasing;
+    // }
 }
 
 $( function() {
     $(window).scroll( function( eventInfo ) {
         var scrollPos =  $("body").scrollTop();
-        var topSide    = mapPar(scrollPos, 0,3300, 200,3700,easingFunctions.easeInOutQuad);
-        $("#charByte").css("top", topSide);
+        var fallChar    = mapPar(scrollPos, 0,2400, 200,3000);
+        var moveSceneOne = mapPar(scrollPos, 2400,4000, -1130,356);
+        // var fadeSceneOne = mapPar(scrollPos, 2725,2785, 0,1)
+        var moveLeftChar = mapPar(scrollPos, 2400,2800, 0,450);
+        var scaleCharWidth = mapPar(scrollPos, 2400,2800, 150,75);
+        var scaleCharHeight = mapPar(scrollPos, 2400,2800, 200,100);
+        $("#charByte").css({top: fallChar});
+        $("#backgroundScene1").css({
+            left: moveSceneOne,
+            top: scrollPos + 295,
+            // opacity: fadeSceneOne
+        });
         //$("#charByte").css("left", mapPar(scrollPos, 3300,4000, 200,500),"top", mapPar(scrollPos, 3300,6600, 3700,7900));
 
+
+        console.log(scrollPos)
 
         // console.log(scrollPos);
         // console.log(mapPar(scrollPos, 0,3300, 200,3700,easingFunctions.easeInOutBounce))
         if(scrollPos >= 2400){
             // console.log("if statement fixed");
-            $("#computerScreen").css("position", "fixed");
-            $("#computerScreen").css("top", "0");
+            $("#computerScreen").css({
+                top: 0,
+                "position": "fixed"
+            });
+            $("#charByte").css({
+                top: 600,
+                "position": "fixed",
+                "margin-left": -moveLeftChar,
+                width: scaleCharWidth,
+                height: scaleCharHeight
+            });
         } else {
             // console.log("if statement absolute");
-            $("#computerScreen").css("position", "absolute");
-            $("#computerScreen").css("top", "2400px");
+            $("#computerScreen").css({
+                top: 2400,
+                "position": "absolute"
+            });
+            $("#charByte").css({
+                top: fallChar,
+                "position": "relative",
+                left: "calc(50% 150px/2)"
+            });
         }
+
        /* if (scrollPos >= 0 && scrollPos < 3250) {
             $("body").css("overflow", "hidden");
         } else {
@@ -179,41 +208,6 @@ $( function() {
     })
 })
 
-$("#btnScroll").click(function(event){
-      event.preventDefault();
-      $("body").animate({"scrollTop": "3280px"},6000)
- });
-
-$("#btnScroll").click(function(){
-    $("#btnScroll").animate({ opacity: 0 });
-});
-
-
-
-
-/*
-$( function() {
-    $(window).scroll( function( eventInfo ) {
-        var scrollPos =  $("body").scrollTop();
-        var topSide    = mapPar(scrollPos, 0,3300, 200,3700, easingFunctions.easeInOutQuad);
-        $("#charByte").css("top", topSide);
-    })
-})
-
-$("#btnLoadScroll").click(function(event){
-        event.preventDefault();
-        $("body").animate({"scrollTop": "3280px"}, 6000, "easeOutExpo" )
-    }
-)
-
-
-$("#btnLoadScroll").click(function(){
-    $('body').animate({
-        scrollTop: "3280px"
-    },500, 'easeOutBounce');
-
-    return false;
-});*/
 
 // function getRandom(num) {
 //     var randomNum = Math.floor(Math.random() * num);
