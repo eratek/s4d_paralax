@@ -253,20 +253,20 @@ function randomIntFromInterval(min,max) {
 
 
 function clouds(){
-    for (var i = getRandom(25) ; i >= 0; i--) {
+    for (var i = randomIntFromInterval(10, 25) ; i >= 0; i--) {
         // console.log("plaats wolk")
         var randomN = getRandom(3);
         if (randomN == 0) {
             cloudSmall();
-            console.log("cloudSmall")
+            // console.log("cloudSmall")
         }
         else if (randomN == 1) {
           cloudMedium(); 
-          console.log("cloudMedium")
+          // console.log("cloudMedium")
         }
         else {
           cloudLarge();  
-          console.log("cloudLarge")
+          // console.log("cloudLarge")
         }
     };
 }
@@ -274,7 +274,6 @@ function clouds(){
 function cloudSmall(){
     $("#clouds").append("<img src='static/img/cloud.png' class='cloud_small'/>");   
     $( ".cloud_small" ).each(function( index ) {
-      // console.log( index );
       $(this).css({
             top: getRandom(2100),
             left: getRandom(1300),
@@ -287,7 +286,6 @@ function cloudSmall(){
 function cloudMedium(){
     $("#clouds").append("<img src='static/img/cloud.png' class='cloud_medium'/>");   
     $( ".cloud_medium" ).each(function( index ) {
-      // console.log( index );
       $(this).css({
             top: getRandom(2100),
             left: getRandom(1000),
@@ -300,7 +298,6 @@ function cloudMedium(){
 function cloudLarge(){
     $("#clouds").append("<img src='static/img/cloud.png' class='cloud_large'/>");   
     $( ".cloud_large" ).each(function( index ) {
-      // console.log( index );
       $(this).css({
             top: getRandom(1900),
             left: getRandom(700),
