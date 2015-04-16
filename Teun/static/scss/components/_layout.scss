@@ -25,7 +25,7 @@ body{
     left: calc(50% - 75px / 2);
     // Top Kan geen percentage zijn want je weet niet hoe groot de body en het scherm is.
     // Kunnen proberen of we met modernizr kunnen kijken wat de scherm maat is en daarop de top aan te passen.
-    top: 200px;
+    top: 700px;
     position: relative;
     z-index: 2;
 
@@ -59,13 +59,41 @@ body{
 
 }
 
+#containerComputer {
+  // width: 100%;
+  // height: 100%;
+  // top: 2400px;
+  // position: absolute;
+  // z-index: 4;
+}
+
+// img.computerScreen{
+//   margin-left: auto;
+//   margin-right: auto;
+//   display: block;
+//   min-width: 100%;
+//   max-width: 1150px;
+//   min-height: 100%;
+//   z-index: 5;
+// }
+
+#backgroundScene1 {
+  width: 1130px;
+  height: 550px;
+  left: -1130px;
+  background-color: #000000;
+  z-index: 3;
+  position: relative;
+}
+
 #computerScreen{
   background: url("../img/computerscreen.png") no-repeat center center;
   height: 100%;
   top: 2400px;
   width: 100%;
   position: absolute;
-  z-index: 5;
+  z-index: 4;
+  // overflow: hidden;
 }
 
 #music_btn{
@@ -88,14 +116,4 @@ body{
   font-weight: normal;
   font-style: normal;
 
-}
-
-#backgroundScene1 {
-  width: 1130px;
-  height: 550px;
-  left: -1130px;
-  // top: 3174px;
-  background-color: #000;
-  // z-index: 6;
-  position: relative;
 }

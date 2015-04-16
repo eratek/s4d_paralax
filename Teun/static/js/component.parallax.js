@@ -150,40 +150,34 @@ function mapPar(x, in_min,  in_max,  out_min,  out_max, easeFunction){
 $( function() {
     $(window).scroll( function( eventInfo ) {
         var scrollPos =  $("body").scrollTop();
-        var fallChar    = mapPar(scrollPos, 0,2400, 200,3000);
-        var moveSceneOne = mapPar(scrollPos, 2400,4000, -1130,356);
+        var fallChar    = mapPar(scrollPos, 0,2400, 200,2400);
+        var moveSceneOne = mapPar(scrollPos, 2400,4000, -1130,211);
         // var fadeSceneOne = mapPar(scrollPos, 2725,2785, 0,1)
-        var moveLeftChar = mapPar(scrollPos, 2400,2800, 0,450);
-        var scaleCharWidth = mapPar(scrollPos, 2400,2800, 150,75);
+        var moveLeftChar = mapPar(scrollPos, 2400,2800, 0,400);
         var scaleCharHeight = mapPar(scrollPos, 2400,2800, 200,100);
         $("#charByte").css({top: fallChar});
         $("#backgroundScene1").css({
             left: moveSceneOne,
-            top: scrollPos + 295,
+            top: scrollPos + 269,
             // opacity: fadeSceneOne
         });
-        //$("#charByte").css("left", mapPar(scrollPos, 3300,4000, 200,500),"top", mapPar(scrollPos, 3300,6600, 3700,7900));
 
+        // console.log(scrollPos)
 
-        console.log(scrollPos)
-
-        // console.log(scrollPos);
-        // console.log(mapPar(scrollPos, 0,3300, 200,3700,easingFunctions.easeInOutBounce))
-        if(scrollPos >= 2400){
-            // console.log("if statement fixed");
+        if(scrollPos>=2400){
             $("#computerScreen").css({
                 top: 0,
                 "position": "fixed"
             });
             $("#charByte").css({
-                top: 600,
+                top: 550,
                 "position": "fixed",
                 "margin-left": -moveLeftChar,
-                width: scaleCharWidth,
+                width: scaleCharHeight/4*3,
                 height: scaleCharHeight
             });
-        } else {
-            // console.log("if statement absolute");
+        }
+        else {
             $("#computerScreen").css({
                 top: 2400,
                 "position": "absolute"
@@ -191,20 +185,12 @@ $( function() {
             $("#charByte").css({
                 top: fallChar,
                 "position": "relative",
-                left: "calc(50% 150px/2)"
+                left: "calc(50% 150px/2)",
+                width: 150,
+                height: 200,
+                "margin-left": 0
             });
         }
-
-       /* if (scrollPos >= 0 && scrollPos < 3250) {
-            $("body").css("overflow", "hidden");
-        } else {
-            $(document).unbind('scroll');
-            $("body").css("overflow", "visible");
-            if(scrollPos > 3250){
-
-            }
-        }
-*/
     })
 })
 
