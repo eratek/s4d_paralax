@@ -27,7 +27,7 @@ body{
     // Kunnen proberen of we met modernizr kunnen kijken wat de scherm maat is en daarop de top aan te passen.
     top: 700px;
     position: relative;
-    z-index: 2;
+    z-index: 101;
 
     .perc{
       border-radius: 50%;
@@ -59,24 +59,6 @@ body{
 
 }
 
-#containerComputer {
-  // width: 100%;
-  // height: 100%;
-  // top: 2400px;
-  // position: absolute;
-  // z-index: 4;
-}
-
-// img.computerScreen{
-//   margin-left: auto;
-//   margin-right: auto;
-//   display: block;
-//   min-width: 100%;
-//   max-width: 1150px;
-//   min-height: 100%;
-//   z-index: 5;
-// }
-
 #backgroundScene1 {
   width: 1130px;
   height: 550px;
@@ -84,7 +66,21 @@ body{
   background-color: #000000;
   z-index: 3;
   position: relative;
+  display: none;
+  background: url(../img/backgroundScene1.jpg) no-repeat;
 }
+
+#backgroundScene2_1, #backgroundScene2_2 {
+  width: 1130px;
+  height: 550px;
+  left: -1130px;
+  z-index: 4;
+  position: relative;
+  display: none;
+}
+
+#backgroundScene2_1 {background: url(../img/backgroundScene2_1.jpg) no-repeat;}
+#backgroundScene2_2 {background: url(../img/backgroundScene2_2.jpg) no-repeat;}
 
 #computerScreen{
   background: url("../img/computerscreen.png") no-repeat center center;
@@ -92,7 +88,7 @@ body{
   top: 2400px;
   width: 100%;
   position: absolute;
-  z-index: 4;
+  z-index: 900;
   // overflow: hidden;
 }
 
@@ -104,6 +100,21 @@ body{
   position: fixed;
   background: url("../img/music_btn.png") no-repeat 0 0;
 }
+
+#clouds {
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+.cloud_small, .cloud_medium, .cloud_large {
+  // background: url(../img.cloud.png) no-repeat;
+  position: absolute;
+  height: auto;
+}
+// .cloud_small {width: 182px;}
+// .cloud_medium {width: 307px;}
+// .cloud_large {width: 633px;}
 
 @font-face {
   font-family: 'wellbutrinregular';

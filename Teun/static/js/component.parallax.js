@@ -148,33 +148,68 @@ function mapPar(x, in_min,  in_max,  out_min,  out_max, easeFunction){
 }
 
 $( function() {
+
+    clouds();
+
     $(window).scroll( function( eventInfo ) {
         var scrollPos =  $("body").scrollTop();
-        var fallChar    = mapPar(scrollPos, 0,2400, 200,2400);
-        var moveSceneOne = mapPar(scrollPos, 2400,4000, -1130,211);
+        var fallChar    = mapPar(scrollPos, 0,2400, 200,3000);
+        var moveSceneOne = mapPar(scrollPos, 3000,4000, -1130,211);
+        var fadeInQuestionOneBg = mapPar(scrollPos, 4300,4600, 0,1);
+        var fadeInQuestionOne = mapPar(scrollPos, 4600,4700, 0,1);
+
+        var moveSceneTwo = mapPar(scrollPos, 4000,5500, -1130,211);
         // var fadeSceneOne = mapPar(scrollPos, 2725,2785, 0,1)
         var moveLeftChar = mapPar(scrollPos, 2400,2800, 0,400);
         var scaleCharHeight = mapPar(scrollPos, 2400,2800, 200,100);
+        
         $("#charByte").css({top: fallChar});
+        
         $("#backgroundScene1").css({
             left: moveSceneOne,
             top: scrollPos + 269,
+            "display": "none"
+            // opacity: fadeSceneOne
+        });
+
+        $("#questionOne").css({
+            "opacity": fadeInQuestionOneBg
+        });
+        $("#qOne").css({
+            "opacity": fadeInQuestionOne
+        });
+
+        var sceneBg
+        if (true) {
+            sceneBg = "#backgroundScene2_2" 
+        }
+        else {
+          sceneBg = "#backgroundScene2_1"   
+        }
+        $(sceneBg).css({
+            left: moveSceneTwo,
+            top: scrollPos + 269,
+            "display": "none"
             // opacity: fadeSceneOne
         });
 
         // console.log(scrollPos)
 
+        // Scene 1
         if(scrollPos>=2400){
             $("#computerScreen").css({
                 top: 0,
                 "position": "fixed"
             });
             $("#charByte").css({
-                top: 550,
+                top: 600,
                 "position": "fixed",
                 "margin-left": -moveLeftChar,
                 width: scaleCharHeight/4*3,
                 height: scaleCharHeight
+            });
+            $("#backgroundScene1").css({
+                "display": "block"
             });
         }
         else {
@@ -191,25 +226,88 @@ $( function() {
                 "margin-left": 0
             });
         }
+
+        // Scene 2
+        if (3885 < scrollPos) { //&& scrollPos < 5500
+            // $(sceneBg).css({
+            //     "display": "block"
+            // });
+            
+            $("#backgroundScene1").css({
+                // "display": "none"
+                "position": "absolute"
+            });
+        }
     })
 })
 
 
-// function getRandom(num) {
-//     var randomNum = Math.floor(Math.random() * num);
-//     return randomNum;
-// }
-
-/*function clouds(){
-
-
+function getRandom(num) {
+    var randomNum = Math.floor(Math.random() * num);
+    return randomNum;
 }
 
-var pixelLocation =  $("startParallax").offset();
+function randomIntFromInterval(min,max) {
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
 
-if(pixelLocation.top > 0 && pixelLocation.top > 960 ){
-    clouds();
-}*/
 
+function clouds(){
+    for (var i = getRandom(25) ; i >= 0; i--) {
+        // console.log("plaats wolk")
+        var randomN = getRandom(3);
+        if (randomN == 0) {
+            cloudSmall();
+            console.log("cloudSmall")
+        }
+        else if (randomN == 1) {
+          cloudMedium(); 
+          console.log("cloudMedium")
+        }
+        else {
+          cloudLarge();  
+          console.log("cloudLarge")
+        }
+    };
+}
+
+function cloudSmall(){
+    $("#clouds").append("<img src='static/img/cloud.png' class='cloud_small'/>");   
+    $( ".cloud_small" ).each(function( index ) {
+      // console.log( index );
+      $(this).css({
+            top: getRandom(2100),
+            left: getRandom(1300),
+            "z-index": getRandom(100),
+            width: randomIntFromInterval(120, 190)
+        });
+    });
+}
+
+function cloudMedium(){
+    $("#clouds").append("<img src='static/img/cloud.png' class='cloud_medium'/>");   
+    $( ".cloud_medium" ).each(function( index ) {
+      // console.log( index );
+      $(this).css({
+            top: getRandom(2100),
+            left: getRandom(1000),
+            "z-index": getRandom(100),
+            width: randomIntFromInterval(200, 300)
+        });
+    });
+}
+
+function cloudLarge(){
+    $("#clouds").append("<img src='static/img/cloud.png' class='cloud_large'/>");   
+    $( ".cloud_large" ).each(function( index ) {
+      // console.log( index );
+      $(this).css({
+            top: getRandom(1900),
+            left: getRandom(700),
+            "z-index": getRandom(100),
+            width: randomIntFromInterval(300, 500)
+        });
+    });
+}
 
 
