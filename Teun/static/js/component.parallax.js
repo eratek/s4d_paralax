@@ -254,57 +254,28 @@ function randomIntFromInterval(min,max) {
 
 function clouds(){
     for (var i = randomIntFromInterval(10, 25) ; i >= 0; i--) {
-        // console.log("plaats wolk")
         var randomN = getRandom(3);
         if (randomN == 0) {
-            cloudSmall();
-            // console.log("cloudSmall")
+            cloud("small",2100,1300,100,120,190);
         }
         else if (randomN == 1) {
-          cloudMedium(); 
-          // console.log("cloudMedium")
+          cloud("medium",2100,1000,100,200,300);
         }
         else {
-          cloudLarge();  
-          // console.log("cloudLarge")
+          cloud("large",1900,700,100,300,500);
         }
     };
 }
 
-function cloudSmall(){
-    $("#clouds").append("<img src='static/img/cloud.png' class='cloud_small'/>");   
-    $( ".cloud_small" ).each(function( index ) {
+function cloud(name,t,l,z,min,max){
+    $("#clouds").append("<img src='static/img/cloud.png' class='cloud_"+name+"'/>");   
+    $( ".cloud_"+name ).each(function( index ) {
       $(this).css({
-            top: getRandom(2100),
-            left: getRandom(1300),
-            "z-index": getRandom(100),
-            width: randomIntFromInterval(120, 190)
+            top: getRandom(t),
+            left: getRandom(l),
+            "z-index": getRandom(z),
+            width: randomIntFromInterval(min, max)
         });
     });
 }
-
-function cloudMedium(){
-    $("#clouds").append("<img src='static/img/cloud.png' class='cloud_medium'/>");   
-    $( ".cloud_medium" ).each(function( index ) {
-      $(this).css({
-            top: getRandom(2100),
-            left: getRandom(1000),
-            "z-index": getRandom(100),
-            width: randomIntFromInterval(200, 300)
-        });
-    });
-}
-
-function cloudLarge(){
-    $("#clouds").append("<img src='static/img/cloud.png' class='cloud_large'/>");   
-    $( ".cloud_large" ).each(function( index ) {
-      $(this).css({
-            top: getRandom(1900),
-            left: getRandom(700),
-            "z-index": getRandom(100),
-            width: randomIntFromInterval(300, 500)
-        });
-    });
-}
-
 
