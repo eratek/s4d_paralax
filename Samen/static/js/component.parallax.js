@@ -137,99 +137,145 @@ function mapPar(x, in_min,  in_max,  out_min,  out_max, easeFunction){
 
     var easingInput = (x-in_min) / (in_max - in_min);
 
-    //return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-    var outputVoorEasing = (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-    if(easeFunction !== undefined) {
-        // t: current time, b: begInnIng value, c: change In value, d: duration
-        return  easeFunction(0,easingInput,0,1,1) * outputVoorEasing;
-    } else {
-        return outputVoorEasing;
-    }
+    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    // var outputVoorEasing = (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    // if(easeFunction !== undefined) {
+    //     // t: current time, b: begInnIng value, c: change In value, d: duration
+    //     return  easeFunction(0,easingInput,0,1,1) * outputVoorEasing;
+    // } else {
+    //     return outputVoorEasing;
+    // }
 }
 
 $( function() {
-    $(window).scroll( function( eventInfo ) {
-        var scrollPos =  $("body").scrollTop();
-        var topSide    = mapPar(scrollPos, 0,3300, 200,3700,easingFunctions.easeInOutBounce);
-        $("#charByte").css("top", topSide);
-        //$("#charByte").css("left", mapPar(scrollPos, 3300,4000, 200,500),"top", mapPar(scrollPos, 3300,6600, 3700,7900));
 
-
-        // console.log(scrollPos);
-        console.log(mapPar(scrollPos, 0,3300, 200,3700,easingFunctions.easeInOutBounce))
-        if(scrollPos >= 2400){
-            // console.log("if statement fixed");
-            $("#computerScreen").css("position", "fixed");
-            $("#computerScreen").css("top", "0");
-        } else {
-            // console.log("if statement absolute");
-            $("#computerScreen").css("position", "absolute");
-            $("#computerScreen").css("top", "2400px");
-        }
-       /* if (scrollPos >= 0 && scrollPos < 3250) {
-            $("body").css("overflow", "hidden");
-        } else {
-            $(document).unbind('scroll');
-            $("body").css("overflow", "visible");
-            if(scrollPos > 3250){
-
-            }
-        }
-*/
-    })
-})
-
-$("#btnScroll").click(function(event){
-      event.preventDefault();
-      $("body").animate({"scrollTop": "3280px"},6000)
- });
-
-$("#btnScroll").click(function(){
-    $("#btnScroll").animate({ opacity: 0 });
-});
-
-
-
-
-/*
-$( function() {
-    $(window).scroll( function( eventInfo ) {
-        var scrollPos =  $("body").scrollTop();
-        var topSide    = mapPar(scrollPos, 0,3300, 200,3700, easingFunctions.easeInOutQuad);
-        $("#charByte").css("top", topSide);
-    })
-})
-
-$("#btnLoadScroll").click(function(event){
-        event.preventDefault();
-        $("body").animate({"scrollTop": "3280px"}, 6000, "easeOutExpo" )
-    }
-)
-
-
-$("#btnLoadScroll").click(function(){
-    $('body').animate({
-        scrollTop: "3280px"
-    },500, 'easeOutBounce');
-
-    return false;
-});*/
-
-// function getRandom(num) {
-//     var randomNum = Math.floor(Math.random() * num);
-//     return randomNum;
-// }
-
-/*function clouds(){
-
-
-}
-
-var pixelLocation =  $("startParallax").offset();
-
-if(pixelLocation.top > 0 && pixelLocation.top > 960 ){
     clouds();
-}*/
+
+    $(window).scroll( function( eventInfo ) {
+        var scrollPos =  $("body").scrollTop();
+        var fallChar    = mapPar(scrollPos, 0,2400, 200,3000);
+        var moveSceneOne = mapPar(scrollPos, 3000,4000, -1130,211);
+        var fadeInQuestionOneBg = mapPar(scrollPos, 4300,4600, 0,1);
+        var fadeInQuestionOne = mapPar(scrollPos, 4600,4700, 0,1);
+
+        var moveSceneTwo = mapPar(scrollPos, 4000,5500, -1130,211);
+        // var fadeSceneOne = mapPar(scrollPos, 2725,2785, 0,1)
+        var moveLeftChar = mapPar(scrollPos, 2400,2800, 0,400);
+        var scaleCharHeight = mapPar(scrollPos, 2400,2800, 200,100);
+        
+        $("#charByte").css({top: fallChar});
+        
+        $("#backgroundScene1").css({
+            left: moveSceneOne,
+            top: scrollPos + 269,
+            "display": "none"
+            // opacity: fadeSceneOne
+        });
+
+        $("#questionOne").css({
+            "opacity": fadeInQuestionOneBg
+        });
+        $("#qOne").css({
+            "opacity": fadeInQuestionOne
+        });
+
+        var sceneBg
+        if (true) {
+            sceneBg = "#backgroundScene2_2" 
+        }
+        else {
+          sceneBg = "#backgroundScene2_1"   
+        }
+        $(sceneBg).css({
+            left: moveSceneTwo,
+            top: scrollPos + 269,
+            "display": "none"
+            // opacity: fadeSceneOne
+        });
+
+        // console.log(scrollPos)
+
+        // Scene 1
+        if(scrollPos>=2400){
+            $("#computerScreen").css({
+                top: 0,
+                "position": "fixed"
+            });
+            $("#charByte").css({
+                top: 600,
+                "position": "fixed",
+                "margin-left": -moveLeftChar,
+                width: scaleCharHeight/4*3,
+                height: scaleCharHeight
+            });
+            $("#backgroundScene1").css({
+                "display": "block"
+            });
+        }
+        else {
+            $("#computerScreen").css({
+                top: 2400,
+                "position": "absolute"
+            });
+            $("#charByte").css({
+                top: fallChar,
+                "position": "relative",
+                left: "calc(50% 150px/2)",
+                width: 150,
+                height: 200,
+                "margin-left": 0
+            });
+        }
+
+        // Scene 2
+        if (3885 < scrollPos) { //&& scrollPos < 5500
+            // $(sceneBg).css({
+            //     "display": "block"
+            // });
+            
+            $("#backgroundScene1").css({
+                // "display": "none"
+                "position": "absolute"
+            });
+        }
+    })
+})
 
 
+function getRandom(num) {
+    var randomNum = Math.floor(Math.random() * num);
+    return randomNum;
+}
+
+function randomIntFromInterval(min,max) {
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+
+function clouds(){
+    for (var i = randomIntFromInterval(10, 25) ; i >= 0; i--) {
+        var randomN = getRandom(3);
+        if (randomN == 0) {
+            cloud("small",2100,1300,100,120,190);
+        }
+        else if (randomN == 1) {
+          cloud("medium",2100,1000,100,200,300);
+        }
+        else {
+          cloud("large",1900,700,100,300,500);
+        }
+    };
+}
+
+function cloud(name,t,l,z,min,max){
+    $("#clouds").append("<img src='static/img/cloud.png' class='cloud_"+name+"'/>");   
+    $( ".cloud_"+name ).each(function( index ) {
+      $(this).css({
+            top: getRandom(t),
+            left: getRandom(l),
+            "z-index": getRandom(z),
+            width: randomIntFromInterval(min, max)
+        });
+    });
+}
 

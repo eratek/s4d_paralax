@@ -9,5 +9,39 @@
   top: 200px;
   background: #f00111;
   left: calc(50% - 150px / 2);
-  z-index: 2;
+  z-index: 30;
+}
+
+#questionOne {
+  background: #fcfef3;
+  width: 185px;
+  min-height: 75px;
+  z-index: 31;
+  opacity: 0;
+  left: 380px;
+  top: 495px;
+  display: block;
+  position: fixed;
+  border-radius: 10px;
+
+  :after{
+    background: url("../img/praten.png") no-repeat;
+    position: fixed;
+    left:381px;
+    top: 602px;
+    width: 35px;
+    height: 26px;
+    content: "";
+    display: block;
+  }
+}
+
+
+
+p.textCharByte
+{
+	font-size: 10pt;
+	padding: 0 5px;
+	text-align: center;
+	opacity: 0;
 }
