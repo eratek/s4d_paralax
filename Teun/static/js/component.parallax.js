@@ -267,9 +267,9 @@ function clouds(){
     };
 }
 
-function cloud(name,t,l,z,min,max){
-    $("#clouds").append("<img src='static/img/cloud.png' class='cloud_"+name+"'/>");   
-    $( ".cloud_"+name ).each(function( index ) {
+function cloud(size,t,l,z,min,max){
+    $("#clouds").append("<img src='static/img/cloud.png' class='cloud_"+size+"'/>");   
+    $( ".cloud_"+size ).each(function( index ) {
       $(this).css({
             top: getRandom(t),
             left: getRandom(l),
