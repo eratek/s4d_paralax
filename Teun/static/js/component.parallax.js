@@ -157,6 +157,7 @@ $( function() {
         var moveSceneOne = mapPar(scrollPos, 3000,4000, -1130,211);
         var fadeInQuestionOneBg = mapPar(scrollPos, 4300,4600, 0,1);
         var fadeInQuestionOne = mapPar(scrollPos, 4600,4700, 0,1);
+        var fadeInChooseOptions = mapPar(scrollPos, 4400,4600, 0,1);
 
         var moveSceneTwo = mapPar(scrollPos, 4000,5500, -1130,211);
         // var fadeSceneOne = mapPar(scrollPos, 2725,2785, 0,1)
@@ -177,6 +178,13 @@ $( function() {
         });
         $("#qOne").css({
             "opacity": fadeInQuestionOne
+        });
+
+        $("#chooseOptions").css({
+            "opacity": fadeInChooseOptions
+        });
+        $("#optionOne").click(function(){
+            console.log("optionOne button cliked")
         });
 
         var sceneBg
