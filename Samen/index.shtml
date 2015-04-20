@@ -30,6 +30,7 @@
         <div id="music_btn"></div>
         <div id="computerScreen"></div>
         <div id="questionOne">
+            <p id="qOne" class="textCharByte">Kies een van de twee wegen om je weg te vervolgen. Bij een If statement werkt dit ook zo.</p>
         </div>
         <div id="charByte"></div>
         <div id="backgroundScene2_2"></div>

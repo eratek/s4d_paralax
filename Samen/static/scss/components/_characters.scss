@@ -24,6 +24,14 @@
   position: fixed;
   border-radius: 10px;
 
+  @media (min-height:780px) and (max-height: 942px){
+    top: 527px;
+  }
+  @media (min-height: 942px){
+    //hoger voor teun.
+    top: 527px;
+  }
+
   :after{
     background: url("../img/praten.png") no-repeat;
     position: fixed;
