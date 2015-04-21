@@ -162,7 +162,7 @@ $( function() {
     $(window).scroll( function( eventInfo ) {
         var scrollPos =  $("body").scrollTop();
         var fallChar    = mapPar(scrollPos, 0,2400, 200,2800);
-        // var moveSceneOne = mapPar(scrollPos, 3000,4000, -1130,211);
+        var moveSceneOne = mapPar(scrollPos, 3000,4000, -1130,211);
         var fadeInQuestionOneBg = mapPar(scrollPos, 4300,4600, 0,1);
         var fadeInQuestionOne = mapPar(scrollPos, 4600,4700, 0,1);
         var fadeInChooseOptions = mapPar(scrollPos, 4400,4600, 0,1);
@@ -201,7 +201,11 @@ $( function() {
         // Scene 1
         if(scrollPos>=2400){
             $("#computerScreen").css({
-                top: 0,
+                top: 20,
+                "position": "fixed"
+            });
+            $("#computerScreenInside").css({
+                top: 67,
                 "position": "fixed"
             });
             $("#charByte").css({
@@ -219,7 +223,11 @@ $( function() {
         }
         else {
             $("#computerScreen").css({
-                top: 2400,
+                top: 2420,
+                "position": "absolute"
+            });
+            $("#computerScreenInside").css({
+                top: 2467,
                 "position": "absolute"
             });
             $("#charByte").css({
@@ -255,7 +263,7 @@ $( function() {
               }); 
           });
           $("#optionTwo").click(function(){
-            console.log("optionTwo button cliked")
+            console.log("optionTwo button click")
             enable_scroll();
             $("#backgroundScene2_2").css({
                 left: moveSceneTwo,
@@ -344,7 +352,7 @@ function randomIntFromInterval(min,max) {
 
 
 function clouds(){
-    for (var i = randomIntFromInterval(10, 25) ; i >= 0; i--) {
+    for (var i = randomIntFromInterval(20, 35) ; i >= 0; i--) {
         var randomN = getRandom(3);
         if (randomN == 0) {
             cloud("small",2100,1058,100,120,190);

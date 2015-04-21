@@ -82,22 +82,27 @@ body{
 #backgroundScene2_1 {background: url(../img/backgroundScene2_1.jpg) no-repeat;}
 #backgroundScene2_2 {background: url(../img/backgroundScene2_2.jpg) no-repeat;}
 
-// #computerScreenInside {
-//   height: 100%;
-//   top: 2400px;
-//   width: 100%;
-//   position: absolute;
-//   z-index: 100;
-// }
+#computerScreenInside {
+  height: 454px;
+  top: 2467px;
+  width: 928px;
+  left: calc(50% - 464px);
+  position: absolute;
+  z-index: 25;
+  background-color: blue;
+  overflow: hidden;
+}
 
 #computerScreen{
-  background: url("../img/computerscreen.png") no-repeat center center;
+  background: url("../img/computerscreen.png") no-repeat;
   height: 632px;
   top: 2400px;
   width: 1024px;
   left: calc(50% - 512px);
+  // top: calc(50% - 316px);
+  // top:40px;
   position: absolute;
-  z-index: 100;
+  z-index: 35;
 }
 
 #music_btn{
