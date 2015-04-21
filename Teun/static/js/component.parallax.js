@@ -156,7 +156,7 @@ $( function() {
     // });
     // $("#optionTwo").click(function(){
     //     $(this).data('clicked', true);
-    //     console.log("optionTwo button cliked")
+    //     console.log("optionTwo button click")
     // });
 
     $(window).scroll( function( eventInfo ) {
