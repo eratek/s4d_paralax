@@ -25,6 +25,7 @@
     <div id="container">
     <div id="clouds"></div>
     <div id="startParallax">
+        <div id="charByte"></div>
         <div id="music_btn"></div>
         <div id="computerScreen">
             <div id="questionOne">
@@ -35,7 +36,6 @@
                 <div id="optionOne"></div>
                 <div id="optionTwo"></div>
             </div>
-            <div id="charByte"></div>
             <div id="backgroundScene2_2"></div>
             <div id="backgroundScene2_1"></div>
             <div id="backgroundScene1"></div>            

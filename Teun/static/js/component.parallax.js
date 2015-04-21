@@ -161,7 +161,7 @@ $( function() {
 
     $(window).scroll( function( eventInfo ) {
         var scrollPos =  $("body").scrollTop();
-        var fallChar    = mapPar(scrollPos, 0,2400, 200,3000);
+        var fallChar    = mapPar(scrollPos, 0,2400, 200,2250);
         var moveSceneOne = mapPar(scrollPos, 3000,4000, -1130,211);
         var fadeInQuestionOneBg = mapPar(scrollPos, 4300,4600, 0,1);
         var fadeInQuestionOne = mapPar(scrollPos, 4600,4700, 0,1);
@@ -193,7 +193,7 @@ $( function() {
         });
 
         
-        // console.log(scrollPos)
+        console.log(scrollPos)
         // if (4650 <= scrollPos && scrollPos < 4700) {
         //   disable_scroll();
         // };
@@ -224,8 +224,8 @@ $( function() {
                 top: fallChar,
                 "position": "relative",
                 left: "calc(50% 150px/2)",
-                width: 150,
-                height: 200,
+                width: 75,
+                height: 100,
                 "margin-left": 0
             });
         }
@@ -365,7 +365,7 @@ function cloud(size,t,l,z,min,max){
             "z-index": getRandom(z),
             width: randomIntFromInterval(min, max)
         });
-      console.log(getRandom(l))
+      // console.log(getRandom(l))
     });
 }
 

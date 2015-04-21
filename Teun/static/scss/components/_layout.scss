@@ -18,25 +18,25 @@ body{
 
   #btnScroll{
     border-radius: 50%;
-    width: 75px;
-    height: 75px;
+    width: 50px;
+    height: 50px;
     background: #ff1e1e;
     text-align: center;
-    left: calc(50% - 75px / 2);
+    left: calc(50% - 50px / 2);
     // Top Kan geen percentage zijn want je weet niet hoe groot de body en het scherm is.
     // Kunnen proberen of we met modernizr kunnen kijken wat de scherm maat is en daarop de top aan te passen.
-    top: 700px;
+    top: 450px;
     position: relative;
-    z-index: 101;
+    z-index: 1001;
 
     .perc{
       border-radius: 50%;
-      width: 75px;
+      width: 50px;
       height: 19px;
       background: #ff1e1e;
-      padding: 28px 0;
+      padding: 15px 0;
       font-family: wellbutrinregular ;
-      font-size: 18px;
+      font-size: 12px;
       color: #e7e0e0;
       z-index: 3;
     }
@@ -99,6 +99,7 @@ body{
   top: 15px;
   position: fixed;
   background: url("../img/music_btn.png") no-repeat 0 0;
+  z-index: 10000;
 }
 
 #clouds {
