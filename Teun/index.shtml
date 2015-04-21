@@ -26,19 +26,20 @@
     <div id="clouds"></div>
     <div id="startParallax">
         <div id="music_btn"></div>
-        <div id="computerScreen"></div>
-        <div id="questionOne">
-            <p id="qOne" class="textCharByte">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div id="computerScreen">
+            <div id="questionOne">
+                <p id="qOne" class="textCharByte">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div id="chooseOptions">
+                <div id="optionOne"></div>
+                <div id="optionTwo"></div>
+            </div>
+            <div id="charByte"></div>
+            <div id="backgroundScene2_2"></div>
+            <div id="backgroundScene2_1"></div>
+            <div id="backgroundScene1"></div>            
         </div>
-        <!-- <div id="chooseOptions"> -->
-            <div id="optionOne"></div>
-            <div id="optionTwo"></div>
-        <!-- </div> -->
-        <div id="charByte"></div>
-        <div id="backgroundScene2_2"></div>
-        <div id="backgroundScene2_1"></div>
-        <div id="backgroundScene1"></div>
         
         <div id="btnScroll">
             <div id="depreload" class="table">

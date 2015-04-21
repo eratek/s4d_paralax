@@ -151,6 +151,14 @@ $( function() {
 
     clouds();
 
+    // $("#optionOne").click(function(){
+    //     $(this).data('clicked', true);
+    // });
+    // $("#optionTwo").click(function(){
+    //     $(this).data('clicked', true);
+    //     console.log("optionTwo button cliked")
+    // });
+
     $(window).scroll( function( eventInfo ) {
         var scrollPos =  $("body").scrollTop();
         var fallChar    = mapPar(scrollPos, 0,2400, 200,3000);
@@ -159,7 +167,7 @@ $( function() {
         var fadeInQuestionOne = mapPar(scrollPos, 4600,4700, 0,1);
         var fadeInChooseOptions = mapPar(scrollPos, 4400,4600, 0,1);
 
-        var moveSceneTwo = mapPar(scrollPos, 4000,5500, -1130,211);
+        var moveSceneTwo = mapPar(scrollPos, 4800,5500, -1130,211);
         // var fadeSceneOne = mapPar(scrollPos, 2725,2785, 0,1)
         var moveLeftChar = mapPar(scrollPos, 2400,2800, 0,400);
         var scaleCharHeight = mapPar(scrollPos, 2400,2800, 200,100);
@@ -183,25 +191,12 @@ $( function() {
         $("#chooseOptions").css({
             "opacity": fadeInChooseOptions
         });
-        $("#optionOne").click(function(){
-            console.log("optionOne button cliked")
-        });
 
-        var sceneBg
-        if (true) {
-            sceneBg = "#backgroundScene2_2" 
-        }
-        else {
-          sceneBg = "#backgroundScene2_1"   
-        }
-        $(sceneBg).css({
-            left: moveSceneTwo,
-            top: scrollPos + 269,
-            "display": "none"
-            // opacity: fadeSceneOne
-        });
-
+        
         // console.log(scrollPos)
+        // if (4650 <= scrollPos && scrollPos < 4700) {
+        //   disable_scroll();
+        // };
 
         // Scene 1
         if(scrollPos>=2400){
@@ -235,19 +230,105 @@ $( function() {
             });
         }
 
+        
+
         // Scene 2
-        if (3885 < scrollPos) { //&& scrollPos < 5500
-            // $(sceneBg).css({
-            //     "display": "block"
-            // });
-            
-            $("#backgroundScene1").css({
-                // "display": "none"
-                "position": "absolute"
-            });
+        if (4650 < scrollPos) { //&& scrollPos < 5500
+            // disable_scroll();
+          // console.log("scene 2")
+          $("#backgroundScene1").css({
+            // "display": "none"
+            "position": "absolute"
+          });
+          $("#optionOne").click(function(){
+            console.log("optionOne button cliked")
+            enable_scroll();
+            $("#backgroundScene2_1").css({
+                left: moveSceneTwo,
+                top: scrollPos + 269,
+                "display": "block"
+              }); 
+              $("#backgroundScene2_2").css({
+                "display": "none"
+              }); 
+          });
+          $("#optionTwo").click(function(){
+            console.log("optionTwo button cliked")
+            enable_scroll();
+            $("#backgroundScene2_2").css({
+                left: moveSceneTwo,
+                top: scrollPos + 269,
+                "display": "block"
+              }); 
+              $("#backgroundScene2_1").css({
+                "display": "none"
+              });
+          });
         }
     })
 })
+
+// function sceneTwoOne () {
+//   $("#backgroundScene2_1").css({
+//     left: moveSceneTwo,
+//     top: scrollPos + 269,
+//     "display": "block"
+//   }); 
+//   $("#backgroundScene2_2").css({
+//     "display": "none"
+//   });
+// }
+
+// function sceneTwoTwo () {
+//   $("#backgroundScene2_2").css({
+//     left: moveSceneTwo,
+//     top: scrollPos + 269,
+//     "display": "block"
+//   }); 
+//   $("#backgroundScene2_1").css({
+//     "display": "none"
+//   });
+// }
+
+
+// left: 37, up: 38, right: 39, down: 40,
+// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+var keys = [37, 38, 39, 40];
+
+function preventDefault(e) {
+  e = e || window.event;
+  if (e.preventDefault)
+      e.preventDefault();
+  e.returnValue = false;  
+}
+
+function keydown(e) {
+    for (var i = keys.length; i--;) {
+        if (e.keyCode === keys[i]) {
+            preventDefault(e);
+            return;
+        }
+    }
+}
+
+function wheel(e) {
+  preventDefault(e);
+}
+
+function disable_scroll() {
+  if (window.addEventListener) {
+      window.addEventListener('DOMMouseScroll', wheel, false);
+  }
+  window.onmousewheel = document.onmousewheel = wheel;
+  document.onkeydown = keydown;
+}
+
+function enable_scroll() {
+    if (window.removeEventListener) {
+        window.removeEventListener('DOMMouseScroll', wheel, false);
+    }
+    window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
+}
 
 
 function getRandom(num) {
@@ -264,13 +345,13 @@ function clouds(){
     for (var i = randomIntFromInterval(10, 25) ; i >= 0; i--) {
         var randomN = getRandom(3);
         if (randomN == 0) {
-            cloud("small",2100,1300,100,120,190);
+            cloud("small",2100,1058,100,120,190);
         }
         else if (randomN == 1) {
-          cloud("medium",2100,1000,100,200,300);
+          cloud("medium",2100,948,100,200,300);
         }
         else {
-          cloud("large",1900,700,100,300,500);
+          cloud("large",1900,748,100,300,500);
         }
     };
 }
@@ -284,6 +365,7 @@ function cloud(size,t,l,z,min,max){
             "z-index": getRandom(z),
             width: randomIntFromInterval(min, max)
         });
+      console.log(getRandom(l))
     });
 }
 
