@@ -26,6 +26,11 @@
     <div id="clouds"></div>
     <div id="startParallax">
         <div id="charByte"></div>
+        <div id="btnScroll">
+            <div id="depreload" class="table">
+                <div class="perc"></div>
+            </div>
+        </div>
         <div id="music_btn"></div>
             <div id="computerScreenInside">
                 <div id="questionOne">
@@ -41,12 +46,6 @@
                 <div id="backgroundScene2_2"></div>
             </div>
         <div id="computerScreen"></div>
-        
-        <div id="btnScroll">
-            <div id="depreload" class="table">
-                <div class="perc"></div>
-            </div>
-        </div>
     </div>
     <div id="skyFall"></div>
     

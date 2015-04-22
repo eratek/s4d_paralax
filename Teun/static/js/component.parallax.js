@@ -184,20 +184,21 @@ $( function() {
         $("#charByte").css({top: fallChar});
         
         $("#backgroundScene1").css({
-            left: moveSceneOne
+            left: moveSceneOne,
+            top: scrollPos
         });
 
-        $("#backgroundScene1").css({
-            left: moveSceneOneOut
-        });
+        // $("#backgroundScene1").css({
+        //     left: moveSceneOneOut
+        // });
 
         // $("#backgroundScene2_1").css({
         //     left: moveSceneTwo
         //   }); 
 
-        $("#backgroundScene2_2").css({
-            left: moveSceneTwo
-          }); 
+        // $("#backgroundScene2_2").css({
+        //     left: moveSceneTwo
+        //   }); 
 
         // $("#questionOne").css({
         //     "opacity": fadeInQuestionOneBg
@@ -219,16 +220,15 @@ $( function() {
         // Scene 1
         if(scrollPos>=2400){
             $("#computerScreen").css({
-                top: 20,
-                "position": "fixed"
+                top: scrollPos - 590,
+                // "position": "fixed"
             });
             $("#computerScreenInside").css({
-                top: 67,
-                "position": "fixed"
+                top: scrollPos - 90,
+                // "position": "fixed"
             });
             $("#charByte").css({
-                top: 400,
-                "position": "fixed",
+                top: scrollPos + 400,
                 // "margin-left": -moveLeftChar,
                 // width: scaleCharHeight/4*3,
                 // height: scaleCharHeight
@@ -238,12 +238,10 @@ $( function() {
         }
         else {
             $("#computerScreen").css({
-                top: 2420,
-                "position": "absolute"
+                top: 1815
             });
             $("#computerScreenInside").css({
-                top: 2467,
-                "position": "absolute"
+                top: 2315,
             });
             $("#charByte").css({
                 top: fallChar,
@@ -305,13 +303,13 @@ function clouds(){
     for (var i = randomIntFromInterval(20, 35) ; i >= 0; i--) {
         var randomN = getRandom(3);
         if (randomN == 0) {
-            cloud("small",2100,1058,100,120,190);
+            cloud("small",2100,1040,100,120,190);
         }
         else if (randomN == 1) {
-          cloud("medium",2100,948,100,200,300);
+          cloud("medium",2100,930,100,200,300);
         }
         else {
-          cloud("large",1900,748,100,300,500);
+          cloud("large",1900,730,100,300,500);
         }
     };
 }
