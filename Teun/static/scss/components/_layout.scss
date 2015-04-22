@@ -60,27 +60,27 @@ body{
 }
 
 #backgroundScene1 {
-  width: 1130px;
-  height: 550px;
-  left: -1130px;
+  width: 928px;
+  height: 454px;
+  left: -928px;
   background-color: #000000;
   z-index: 3;
-  // position: relative;
-  display: none;
+  position: relative;
+  display: block;
   background: url(../img/backgroundScene1.jpg) no-repeat;
 }
 
 #backgroundScene2_1, #backgroundScene2_2 {
-  width: 1130px;
-  height: 550px;
-  left: -1130px;
+  width: 928px;
+  height: 454px;
+  left: -928px;
   z-index: 4;
   position: relative;
-  display: none;
+  display: block;
 }
 
-#backgroundScene2_1 {background: url(../img/backgroundScene2_1.jpg) no-repeat;}
-#backgroundScene2_2 {background: url(../img/backgroundScene2_2.jpg) no-repeat;}
+#backgroundScene2_1 {background: url(../img/backgroundScene2_1.jpg) no-repeat; top:-454px;}
+#backgroundScene2_2 {background: url(../img/backgroundScene2_2.jpg) no-repeat; top:-908px;}
 
 #computerScreenInside {
   height: 454px;
@@ -89,7 +89,6 @@ body{
   left: calc(50% - 464px);
   position: absolute;
   z-index: 25;
-  background-color: blue;
   overflow: hidden;
 }
 
@@ -99,8 +98,6 @@ body{
   top: 2400px;
   width: 1024px;
   left: calc(50% - 512px);
-  // top: calc(50% - 316px);
-  // top:40px;
   position: absolute;
   z-index: 35;
 }

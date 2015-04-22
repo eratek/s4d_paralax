@@ -36,9 +36,9 @@
                     <div id="optionOne"></div>
                     <div id="optionTwo"></div>
                 </div>
-                <div id="backgroundScene2_2"></div>
+                <div id="backgroundScene1"></div>  
                 <div id="backgroundScene2_1"></div>
-                <!-- <div id="backgroundScene1"></div>             -->
+                <div id="backgroundScene2_2"></div>
             </div>
         <div id="computerScreen"></div>
         
