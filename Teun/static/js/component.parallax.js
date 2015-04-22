@@ -168,33 +168,39 @@ $( function() {
         var fallChar    = mapPar(scrollPos, 0,2400, 200,2800);
         // var moveLeftChar = mapPar(scrollPos, 2400,2800, 0,400);
         // var scaleCharHeight = mapPar(scrollPos, 2400,2800, 200,100);
+        
+        // StartScene
+        var moveStartSceneOut = mapPar(scrollPos, 3000,4000, 0,928);
 
         // scene1
         var moveSceneOne = mapPar(scrollPos, 3000,4000, -928,0);
         // var fadeInQuestionOneBg = mapPar(scrollPos, 4300,4600, 0,1);
         // var fadeInQuestionOne = mapPar(scrollPos, 4600,4700, 0,1);
         // var fadeInChooseOptions = mapPar(scrollPos, 4400,4600, 0,1);
+        var moveSceneOneOut = mapPar(scrollPos, 5000,6000, 0,928);
 
         // scene2
-        var moveSceneOneOut = mapPar(scrollPos, 4000,5000, 0,928);
-        var moveSceneTwo = mapPar(scrollPos, 4000,5000, -928,0);
+        var moveSceneTwo = mapPar(scrollPos, 5000,6000, -928,0);
         // var fadeSceneOne = mapPar(scrollPos, 2725,2785, 0,1)
         
         
         $("#charByte").css({top: fallChar});
+
+        $("#backgroundStartScene").css({
+            left: moveStartSceneOut
+        });
         
         $("#backgroundScene1").css({
-            left: moveSceneOne,
-            top: scrollPos
+            left: moveSceneOne
         });
 
-        // $("#backgroundScene1").css({
-        //     left: moveSceneOneOut
-        // });
+        $("#backgroundScene1").css({
+            left: moveSceneOneOut
+        });
 
-        // $("#backgroundScene2_1").css({
-        //     left: moveSceneTwo
-        //   }); 
+        $("#backgroundScene2_1").css({
+            left: moveSceneTwo
+          }); 
 
         // $("#backgroundScene2_2").css({
         //     left: moveSceneTwo
@@ -211,21 +217,15 @@ $( function() {
         //     "opacity": fadeInChooseOptions
         // });
 
-        
-        // console.log(scrollPos)
-        // if (4650 <= scrollPos && scrollPos < 4700) {
-        //   disable_scroll();
-        // };
-
         // Scene 1
         if(scrollPos>=2400){
             $("#computerScreen").css({
-                top: scrollPos - 590,
-                // "position": "fixed"
+                top: 20,
+                "position": "fixed"
             });
             $("#computerScreenInside").css({
-                top: scrollPos - 90,
-                // "position": "fixed"
+                top: 67,
+                "position": "fixed"
             });
             $("#charByte").css({
                 top: scrollPos + 400,
@@ -238,10 +238,12 @@ $( function() {
         }
         else {
             $("#computerScreen").css({
-                top: 1815
+                top: 2420,
+                "position": "absolute"
             });
             $("#computerScreenInside").css({
-                top: 2315,
+                top: 2467,
+                "position": "absolute"
             });
             $("#charByte").css({
                 top: fallChar,

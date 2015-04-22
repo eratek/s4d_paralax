@@ -2,7 +2,7 @@
 // Layout.scss
 // --------------------------------------------------
 body{
-  height: 6400px;
+  height: 7400px;
   margin: 0px;
 }
 
@@ -59,6 +59,18 @@ body{
 
 }
 
+#backgroundStartScene {
+  width: 928px;
+  height: 454px;
+  left: 0;
+  top: 0;
+  background-color: #000000;
+  z-index: 3;
+  position: absolute;
+  display: block;
+  background: url(../img/backgroundStart.jpg) no-repeat;
+}
+
 #backgroundScene1 {
   width: 928px;
   height: 454px;
@@ -66,7 +78,7 @@ body{
   top: 0;
   background-color: #000000;
   z-index: 3;
-  position: relative;
+  position: absolute;
   display: block;
   background: url(../img/backgroundScene1.jpg) no-repeat;
 }
@@ -75,32 +87,33 @@ body{
   width: 928px;
   height: 454px;
   left: -928px;
+  top: 0;
   z-index: 4;
-  position: relative;
+  position: absolute;
   display: block;
 }
 
-#backgroundScene2_1 {background: url(../img/backgroundScene2_1.jpg) no-repeat; top:-454px;}
-#backgroundScene2_2 {background: url(../img/backgroundScene2_2.jpg) no-repeat; top:-908px;}
+#backgroundScene2_1 {background: url(../img/backgroundScene2_1.jpg) no-repeat;}
+#backgroundScene2_2 {background: url(../img/backgroundScene2_2.jpg) no-repeat;}
 
 #computerScreenInside {
   height: 454px;
-  top: 2315px;
+  top: 2467px;
   width: 928px;
   left: calc(50% - 464px);
-  position: relative;
+  position: absolute;
   z-index: 25;
   overflow: hidden;
-  background: url(../img/backgroundStart.jpg) no-repeat;
+  // background: url(../img/backgroundStart.jpg) no-repeat;
 }
 
 #computerScreen{
   background: url("../img/computerscreen.png") no-repeat;
   height: 632px;
-  top: 1815px;
+  top: 2420px;
   width: 1024px;
   left: calc(50% - 512px);
-  position: relative;
+  position: absolute;
   z-index: 35;
 }
 
