@@ -166,8 +166,8 @@ $( function() {
 
         // charByte
         var fallChar    = mapPar(scrollPos, 0,2400, 200,2800);
-        // var moveLeftChar = mapPar(scrollPos, 2400,2800, 0,400);
-        // var scaleCharHeight = mapPar(scrollPos, 2400,2800, 200,100);
+        var moveRightChar = mapPar(scrollPos, 2400,2800, 0,400);
+        // var scaleCharHeight = mapPar(scrollPos, 2400,2800, 100,100);
         
         // StartScene
         var moveStartSceneOut = mapPar(scrollPos, 3000,4000, 0,928);
@@ -187,19 +187,19 @@ $( function() {
         $("#charByte").css({top: fallChar});
 
         $("#backgroundStartScene").css({
-            left: moveStartSceneOut
+            right: moveStartSceneOut
         });
         
         $("#backgroundScene1").css({
-            left: moveSceneOne
+            right: moveSceneOne
         });
 
         $("#backgroundScene1").css({
-            left: moveSceneOneOut
+            right: moveSceneOneOut
         });
 
         $("#backgroundScene2_1").css({
-            left: moveSceneTwo
+            right: moveSceneTwo
           }); 
 
         // $("#backgroundScene2_2").css({
@@ -228,8 +228,9 @@ $( function() {
                 "position": "fixed"
             });
             $("#charByte").css({
-                top: scrollPos + 400,
-                // "margin-left": -moveLeftChar,
+                top: 400,
+                "position": "fixed",
+                "margin-left": -moveRightChar,
                 // width: scaleCharHeight/4*3,
                 // height: scaleCharHeight
                 width: 75,
@@ -254,6 +255,12 @@ $( function() {
                 "margin-left": 0
             });
         }
+
+        if (scrollPos >= 4300) {
+            $("body").css({
+                height: 7678 //+678 = scrollPos 7000
+            })
+        };
 
         
 
