@@ -1,0 +1,59 @@
+//
+// Detail
+// --------------------------------------------------
+
+#charByte{
+  width: 180px;
+  height: 180px;
+  position: relative;
+  top: 200px;
+  background: url(../img/byteValBig.png);
+  background-size: 180px 180px;
+  left: calc(50% - 180px / 2);
+  z-index: 30;
+}
+
+#questionOne {
+  background-color: yellow;
+  width: 185px;
+  height: 75px;
+  z-index: 31;
+  opacity: 0;
+  left: 360px;
+  top: 540px;
+  position: relative;
+  display: block;
+  position: fixed;
+  border-radius: 30%;
+}
+
+p.textCharByte
+{
+	font-size: 10pt;
+	padding: 0 5px;
+	text-align: center;
+	opacity: 0;
+}
+
+#chooseOptions {opacity: 0;}
+
+#optionOne, #optionTwo {
+	width: 30px;
+	height: 30px;
+	z-index: 300;
+	left: 580px;
+	position: relative;
+  display: block;
+  position: fixed;
+  border: none;
+}
+
+#optionOne {
+	background-color: green;
+	top: 540px;
+}
+
+#optionTwo {
+	background-color: pink;
+	top: 600px;
+}
