@@ -35,80 +35,61 @@ function cloud(size,t,l,z,min,max){
     });
 }
 
-function mapPar(x, in_min,  in_max,  out_min,  out_max){
-    if( x < in_min) {
-        return out_min;
-    }
-    if( x > in_max) {
-        return out_max;
-    }
-    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-}
+function mapParallax(x, in_min,  in_max,  out_min,  out_max){
+   if( x < in_min) {
+      return undefined;
+   }
+   if( x > in_max) {
+      return undefined;
+   }
+    var waarde = (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    return waarde;
+} 
 
 $( function() {
 
     clouds();
 
-    // $("#optionOne").click(function(){
-    //     $(this).data('clicked', true);
-    // });
-    // $("#optionTwo").click(function(){
-    //     $(this).data('clicked', true);
-    //     console.log("optionTwo button click")
-    // });
+    $("#optionOne").click(function(){
+        $(this).data('clicked', true);
+    });
+    $("#optionTwo").click(function(){
+        $(this).data('clicked', true);
+        console.log("optionTwo button click")
+    });
 
     $(window).scroll( function( eventInfo ) {
         var scrollPos =  $("body").scrollTop();
-        
-        var lastScroll = 0
-        if (scrollPos > lastScroll) {
-            lastScroll = lastScroll + scrollPos;
-        }
-        else {
-            lastScroll = lastScroll
-        }
-
-        console.log("lastScroll: "+lastScroll);
-        console.log("scrollPos: "+scrollPos)
-
-        function movePar(startValue, endValue, startResult, endResult) {
-            if (scrollPos >= startValue) {
-                return mapPar(scrollPos, startValue,endValue, startResult,endResult);
-            }
-        }
-        // console.log(scrollPos);
+        console.log(scrollPos);
 
         // charByte
-        var fallChar = movePar(0,2400,200,2720);
-        var moveRightChar = movePar(2400,2800,0,320);
+        var fallChar = mapParallax(scrollPos, 0,2400, 200,2720);
+        var moveRightChar = mapParallax(scrollPos, 2400,2800,0,320);
         $("#charByte").css({ top: fallChar });
         
-        // StartScene
-        var moveStartSceneOut = movePar(3000,4000,0,928);
+        // // StartScene
+        var moveStartSceneOut = mapParallax(scrollPos, 3000,4000,0,928);
         $("#backgroundStartScene").css({ right: moveStartSceneOut });
 
-        // scene1
-        var moveSceneOne = movePar(3000,4000, -928,0);
+        // // scene1
+        var moveSceneOne = mapParallax(scrollPos, 3000,4000, -928,0) || mapParallax(scrollPos, 5000,6000, 0,928);
         $("#backgroundScene1").css({ right: moveSceneOne });
-        // var fadeInQuestionOneBg = mapPar(scrollPos, 4300,4600, 0,1);
-        // var fadeInQuestionOne = mapPar(scrollPos, 4600,4700, 0,1);
-        // var fadeInChooseOptions = mapPar(scrollPos, 4400,4600, 0,1);
-        var moveSceneOneOut = movePar(5000,6000,0,928)
-        $("#backgroundScene1").css({ right: moveSceneOneOut });
+        var fadeInQuestionOneBg = mapParallax(scrollPos, 4200,4400, 0,1);
+        // var fadeInQuestionOne = mapParallax(scrollPos, 4600,4700, 0,1);
+        // var fadeInChooseOptions = mapParallax(scrollPos, 4400,4600, 0,1);
 
-        // scene2
-        var moveSceneTwo = movePar(5000,6000,-928,0);
+        // // scene2
+        var moveSceneTwo = mapParallax(scrollPos, 5000,6000,-928,0);
         $("#backgroundScene2_1").css({ right: moveSceneTwo }); 
-        // var fadeSceneOne = mapPar(scrollPos, 2725,2785, 0,1)
 
 
         // $("#backgroundScene2_2").css({
         //     left: moveSceneTwo
         //   }); 
 
-        // $("#questionOne").css({
-        //     "opacity": fadeInQuestionOneBg
-        // });
+        $("#questionOne").css({
+            "opacity": fadeInQuestionOneBg
+        });
         // $("#qOne").css({
         //     "opacity": fadeInQuestionOne
         // });
@@ -155,6 +136,7 @@ $( function() {
                 "margin-left": 0
             });
         }
+
         if(scrollPos>=2390){
             $("#charByte").css({
                 "background": "url(static/img/byteNormal.png)",
