@@ -38,6 +38,7 @@
             <div id="answerTwoBtn">Answer 2</div>
         </div>
             <div id="computerScreenInside">
+                <div id="char2"></div>
                 <div id="introText" class="oval-thought">
                     <div id="textScroll">
                         <p id="textArea">Wil je me helpen de weg te vinden?</p>

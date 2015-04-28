@@ -48,19 +48,12 @@ function mapParallax(x, in_min,  in_max,  out_min,  out_max){
 
 $( function() {
 
+    //Random generate clouds
     clouds();
-
-    // $("#optionOne").click(function(){
-    //     $(this).data('clicked', true);
-    // });
-    // $("#optionTwo").click(function(){
-    //     $(this).data('clicked', true);
-    //     console.log("optionTwo button click")
-    // });
 
     $(window).scroll( function( eventInfo ) {
         var scrollPos =  $("body").scrollTop();
-        console.log(scrollPos);
+        // console.log(scrollPos);
 
         // charByte & Start
         if(scrollPos>=2390){
@@ -144,14 +137,6 @@ $( function() {
             $( "#introText" ).css({ opacity: 0 })
         };
 
-        //Reset onder 5000
-        if (scrollPos<=5000) {
-            $("body").css({
-                height: 5678 //+678 = scrollPos 5000
-            })
-            $("#textArea").text("Wil je me helpen de weg te vinden?");
-        };
-
         // SCENE 2:
         // Background
         var moveSceneTwo =  mapParallax(scrollPos, 5000,6000, -928,0)   || //moving in
@@ -172,64 +157,45 @@ $( function() {
 
         var moveSceneChose = mapParallax(scrollPos, 6200,7200, -928,0); //moving in
         $("#answerOneBtn").click(function(){
-            console.log("answerOneBtn")
             $("body").css({
                 height: 7878 //+678 = scrollPos 8000
             })
+            $("#questionOne").css({ "display": "none" });
+            $("#backgroundScene2_2").css({ "display": "none" });
+            $("#backgroundScene2_1").css({ "display": "block" });
+            $("#char2").css({ "display": "none"});
         });
         $("#answerTwoBtn").click(function(){
-            console.log("answerTwoBtn")
             $("body").css({
                 height: 7878 //+678 = scrollPos 8000
             })
+            $("#questionOne").css({ "display": "none" });
+            $("#backgroundScene2_1").css({ "display": "none" });
+            $("#backgroundScene2_2").css({ "display": "block" });
+            $("#char2").css({ "display": "block"});
         });
         $("#backgroundScene2_1").css({ right: moveSceneChose });
+        $("#backgroundScene2_2").css({ right: moveSceneChose });
 
-        //Reset onder 6200
-        // if (scrollPos<=6200) {
-        //     $("body").css({
-        //         height: 6878 //+678 = scrollPos 5000
-        //     })
-        // };
+        var showCharTwo =   mapParallax(scrollPos, 6400,7200, -170,0)  || //moving in
+                            mapParallax(scrollPos, 7200,10000, 0,0)  ;  //quit
+        $("#char2").css({ right: showCharTwo });
 
-        // if (scrollPos >= 4300) {
-        //     $("body").css({
-        //         height: 8678 //+678 = scrollPos 7000
-        //     })
-        // };
+        // RESET BODY HIGH
+        // reset < 5000
+        if (scrollPos<=5000) {
+            $("body").css({
+                height: 5678 //+678 = scrollPos 5000
+            })
+            $("#textArea").text("Wil je me helpen de weg te vinden?");
+        };
+         //Reset 5000 - 6200
+        if (5000<scrollPos && scrollPos<6200) {
+            $("body").css({
+                height: 6878 //+678 = scrollPos 5000
+            })
+            $("#questionOne").css({ "display": "block" });
+        };
 
-        
-
-        // // Scene 2
-        // if (4650 < scrollPos) { //&& scrollPos < 5500
-        //     // disable_scroll();
-        //   // console.log("scene 2")
-        //   // $("#backgroundScene1").css({
-        //   //   // "display": "none"
-        //   //   "position": "absolute"
-        //   // });
-        //   $("#optionOne").click(function(){
-        //     console.log("optionOne button cliked")
-        //     $("#backgroundScene2_1").css({
-        //         left: moveSceneTwo,
-        //         top: scrollPos + 269,
-        //         "display": "block"
-        //       }); 
-        //       $("#backgroundScene2_2").css({
-        //         "display": "none"
-        //       }); 
-        //   });
-        //   $("#optionTwo").click(function(){
-        //     console.log("optionTwo button click")
-        //     $("#backgroundScene2_2").css({
-        //         left: moveSceneTwo,
-        //         top: scrollPos + 269,
-        //         "display": "block"
-        //       }); 
-        //       $("#backgroundScene2_1").css({
-        //         "display": "none"
-        //       });
-        //   });
-        // }
     })
 })
