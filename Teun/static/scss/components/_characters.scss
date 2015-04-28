@@ -13,30 +13,6 @@
   z-index: 30;
 }
 
-#questionOne {
-  background: #fcfef3;
-  width: 185px;
-  min-height: 75px;
-  z-index: 31;
-  opacity: 0;
-  left: 120px;
-  top: 200px;
-  display: block;
-  position: absolute;
-  border-radius: 10px;
-
-  :after{
-    background: url("../img/ballon_tip.png") no-repeat;
-    position: absolute;
-    left:121px;
-    top: 275px;
-    width: 35px;
-    height: 26px;
-    content: "";
-    display: block;
-  }
-}
-
 #introText {
   left: 200px;
   top: 100px;
@@ -104,21 +80,52 @@
   margin-top: 5px;
 }
 
-#okBtn
+#okBtn, #answerOneBtn, #answerTwoBtn
 {
-  position: fixed;
-  top: 315px;
-  left: 415px;
   opacity:0;
-  background-color: green;
   padding: 5px 15px;
   border: none;
   border-radius: 10px;
   z-index: 1000;
   color: #fff;
-  font-size: 30px;
   cursor: pointer;
   font-family: 'wellbutrinregular';
+}
+
+#okBtn {
+  background-color: green;
+  position: fixed;
+  top: 315px;
+  left: 415px;
+  font-size: 30px;
+}
+
+#questionOne 
+{
+  position: fixed;
+  top: 215px;
+  left: 915px;
+  z-index: 400;
+  width: 125px;
+  height: auto;
+  opacity:0;
+}
+#answerOneBtn, #answerTwoBtn {
+  position: relative;
+  margin: 5px;
+  font-size: 12px;
+  text-align: center;
+  opacity:1;
+}
+#answerOneBtn {background-color: red;}
+#answerTwoBtn {background-color: blue;}
+
+#okBtn:hover, #answerOneBtn:hover, #answerTwoBtn:hover {
+  opacity:0.5;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 p.textCharByte

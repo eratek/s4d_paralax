@@ -63,74 +63,26 @@ $( function() {
         console.log(scrollPos);
 
         // charByte & Start
+        if(scrollPos>=2390){
+            $("#charByte").css({
+                "background": "url(static/img/byteNormal.png)"
+
+            });
+        } else {
+            $("#charByte").css({
+                "background": "url(static/img/byteVal.png)"
+            });
+        }
         var fallChar = mapParallax(scrollPos, 0,2400, 200,2695);
         // var moveRightChar = mapParallax(scrollPos, 2400,2800,0,320);
         $("#charByte").css({ top: fallChar });
         
         // StartScene
-        var moveStartSceneOut = mapParallax(scrollPos, 2400,4900,0,928);
+        var moveStartSceneOut = mapParallax(scrollPos, 2400,4900,0,928);  //moving out
         $("#backgroundStartScene").css({ right: moveStartSceneOut });
 
-        // scene1
+        // SCENE 1:
         // Background
-        var moveSceneOne =  mapParallax(scrollPos, 0,2400, 0,0)         || //quit
-                            mapParallax(scrollPos, 2400,4900, -928,0)   || //moving in
-                            mapParallax(scrollPos, 4900,5000, 0,0)      || //quit
-                            mapParallax(scrollPos, 5000,6000, 0,928)    || //moving out
-                            mapParallax(scrollPos, 6000,10000, 928,928) ;  //quit
-        $("#backgroundScene1").css({ right: moveSceneOne });
-        // introText
-        var fadeInIntroText =   mapParallax(scrollPos, 0,4900, 0,0)     || //quit
-                                mapParallax(scrollPos, 4900,5000, 0,1)  || //fade in
-                                mapParallax(scrollPos, 5000,10000, 0,0) ;  //quit
-        $("#introText").css({ opacity: fadeInIntroText });
-        // schowOkbtn
-        var schowOkbtn =    mapParallax(scrollPos, 0,4900, 0,0)         ||  //quit
-                            mapParallax(scrollPos, 4900,5000, 0,1)      ||  //fade in
-                            mapParallax(scrollPos, 50000,10000, 0,0)     ;  //quit
-        $( "#okBtn" ).css({ opacity: schowOkbtn })
-        $( "#okBtn" ).click(function() {
-        $(this).css({opacity: 0})
-            $("body").css({
-                height: 8678 //+678 = scrollPos 8000
-            })
-        $("#textArea").text("Bedankt dat je me helpt scroll nu verder!");
-        });
-
-        if (scrollPos<4900) {
-            $( "#okBtn" ).css({ opacity: 0 })
-            $( "#introText" ).css({ opacity: 0 })
-        };
-
-        //Reset onder 5000
-        if (scrollPos<=5000) {
-            $("body").css({
-                height: 5678 //+678 = scrollPos 5000
-            })
-            $("#textArea").text("Wil je me helpen de weg te vinden?");
-        };
-
-        // // scene2
-        var moveSceneTwo =  mapParallax(scrollPos, 0,5000, 0,0)         || //stilstaan
-                            mapParallax(scrollPos, 5000,6000, -928,0)   || //beweging
-                            mapParallax(scrollPos, 6000,10000, 0,0)     ;  //stilstaan
-        $("#backgroundScene2_1").css({ right: moveSceneTwo }); 
-
-
-        // $("#backgroundScene2_2").css({
-        //     left: moveSceneTwo
-        //   }); 
-
-        
-        // $("#qOne").css({
-        //     "opacity": fadeInQuestionOne
-        // });
-
-        // $("#chooseOptions").css({
-        //     "opacity": fadeInChooseOptions
-        // });
-
-        // Scene 1
         if(scrollPos>=2400){
             $("#computerScreen").css({
                 top: 20,
@@ -166,16 +118,79 @@ $( function() {
             });
         }
 
-        if(scrollPos>=2390){
-            $("#charByte").css({
-                "background": "url(static/img/byteNormal.png)"
+        var moveSceneOne =  mapParallax(scrollPos, 2400,4900, -928,0)   || //moving in
+                            mapParallax(scrollPos, 4900,5000, 0,0)      || //quit
+                            mapParallax(scrollPos, 5000,6000, 0,928)    ;  //moving out
+        $("#backgroundScene1").css({ right: moveSceneOne });
+        // introText
+        var fadeInIntroText = mapParallax(scrollPos, 4900,5000, 0,1)    || //fade in
+                              mapParallax(scrollPos, 5000,5100, 1,0)    || //fade out
+                              mapParallax(scrollPos, 5100,10000, 0,0)   ;  //quit
+        $("#introText").css({ opacity: fadeInIntroText });
+        // schowOkbtn
+        var schowOkbtn = mapParallax(scrollPos, 4900,5000, 0,1); //fade in
+        $( "#okBtn" ).css({ opacity: schowOkbtn })
+        $( "#okBtn" ).click(function() {
+        $(this).css({opacity: 0})
+            $("body").css({
+                height: 6878 //+678 = scrollPos 8000
+            })
+        $("#textArea").text("Bedankt dat je me helpt scroll nu verder!");
+        });
 
-            });
-        } else {
-            $("#charByte").css({
-                "background": "url(static/img/byteVal.png)"
-            });
-        }
+        //Fallback opacity bug
+        if (scrollPos<4900) {
+            $( "#okBtn" ).css({ opacity: 0 })
+            $( "#introText" ).css({ opacity: 0 })
+        };
+
+        //Reset onder 5000
+        if (scrollPos<=5000) {
+            $("body").css({
+                height: 5678 //+678 = scrollPos 5000
+            })
+            $("#textArea").text("Wil je me helpen de weg te vinden?");
+        };
+
+        // SCENE 2:
+        // Background
+        var moveSceneTwo =  mapParallax(scrollPos, 5000,6000, -928,0)   || //moving in
+                            mapParallax(scrollPos, 6000,6200, 0,0)      || //quit
+                            mapParallax(scrollPos, 6200,7200, 0,928)    ;  //moving out
+        $("#backgroundScene2").css({ right: moveSceneTwo });
+
+        //Chose
+        var fadeInQuestionOne = mapParallax(scrollPos, 6000,6200, 0,1)  ||  //fade in
+                                mapParallax(scrollPos, 6200,6300, 1,0)  ||  //fade out
+                                mapParallax(scrollPos, 6300,10000, 0,0) ;   //quit
+        $("#questionOne").css({ opacity: fadeInQuestionOne });
+
+        //Fallback opacity bug
+        if (scrollPos<6000) {
+            $( "#questionOne" ).css({ opacity: 0 })
+        };
+
+        var moveSceneChose = mapParallax(scrollPos, 6200,7200, -928,0); //moving in
+        $("#answerOneBtn").click(function(){
+            console.log("answerOneBtn")
+            $("body").css({
+                height: 7878 //+678 = scrollPos 8000
+            })
+        });
+        $("#answerTwoBtn").click(function(){
+            console.log("answerTwoBtn")
+            $("body").css({
+                height: 7878 //+678 = scrollPos 8000
+            })
+        });
+        $("#backgroundScene2_1").css({ right: moveSceneChose });
+
+        //Reset onder 6200
+        // if (scrollPos<=6200) {
+        //     $("body").css({
+        //         height: 6878 //+678 = scrollPos 5000
+        //     })
+        // };
 
         // if (scrollPos >= 4300) {
         //     $("body").css({

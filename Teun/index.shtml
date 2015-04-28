@@ -33,6 +33,10 @@
         </div>
         <div id="music_btn"></div>
         <div id="okBtn">OK</div>
+        <div id="questionOne">
+            <div id="answerOneBtn">Answer 1</div>
+            <div id="answerTwoBtn">Answer 2</div>
+        </div>
             <div id="computerScreenInside">
                 <div id="introText" class="oval-thought">
                     <div id="textScroll">
@@ -44,7 +48,8 @@
                     <div id="optionTwo"></div>
                 </div>
                 <div id="backgroundStartScene"></div>  
-                <div id="backgroundScene1"></div>  
+                <div id="backgroundScene1"></div>
+                <div id="backgroundScene2"></div>  
                 <div id="backgroundScene2_1"></div>
                 <div id="backgroundScene2_2"></div>
             </div>
