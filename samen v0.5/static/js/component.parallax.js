@@ -139,14 +139,12 @@ $( function() {
 
         if(scrollPos>=2390){
             $("#charByte").css({
-                "background": "url(static/img/byteNormal.png)",
-                "background-size": "180px 180px"
+                "background": "url(static/img/byteNormal.png)"
 
             });
         } else {
             $("#charByte").css({
-                "background": "url(static/img/byteValBig.png)",
-                "background-size": "180px 180px"
+                "background": "url(static/img/byteVal.png)"
             });
         }
 

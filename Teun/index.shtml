@@ -32,10 +32,12 @@
             </div>
         </div>
         <div id="music_btn"></div>
+        <div id="okBtn">OK</div>
             <div id="computerScreenInside">
-                <div id="questionOne">
-                    <p id="qOne" class="textCharByte">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div id="introText" class="oval-thought">
+                    <div id="textScroll">
+                        <p id="textArea">Wil je me helpen de weg te vinden?</p>
+                    </div>
                 </div>
                 <div id="chooseOptions">
                     <div id="optionOne"></div>
