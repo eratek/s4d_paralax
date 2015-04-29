@@ -1,0 +1,171 @@
+//
+// Detail
+// --------------------------------------------------
+
+#charByte{
+  width: 180px;
+  height: 180px;
+  position: relative;
+  top: 200px;
+  background: url(../img/byteVal.png);
+  background-size: 180px 180px;
+  left: calc(50% - 175px / 2);
+  z-index: 30;
+}
+
+#introText {
+  left: 200px;
+  top: 100px;
+}
+
+#textScroll
+{
+  overflow: hidden;
+  height: 80px;
+}
+
+.oval-thought {
+
+  :before {
+    content: "";
+    position: absolute;
+    bottom: -24px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    background: #075698;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}
+
+    position: absolute;
+    width: 140px;
+    padding: 15px 35px;
+    margin: 1em auto 80px;
+    text-align: center;
+    color: #fff;
+    background: #075698;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#2e88c4), to(#075698));
+    background: -moz-linear-gradient(#2e88c4, #075698);
+    background: -o-linear-gradient(#2e88c4, #075698);
+    background: linear-gradient(#2e88c4, #075698);
+    -webkit-border-top-left-radius: 220px 120px;
+    -webkit-border-top-right-radius: 220px 120px;
+    -webkit-border-bottom-right-radius: 220px 120px;
+    -webkit-border-bottom-left-radius: 220px 120px;
+    -moz-border-radius: 220px / 120px;
+    border-radius: 220px / 120px;
+    display: block;
+    z-index: 300;
+    opacity: 0;
+
+  :after {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: #075698;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+  }
+
+}
+
+#textArea
+{
+  margin-top: 5px;
+}
+
+#okBtn, #answerTwoBtn, #answerOneBtn
+{
+  opacity:0;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 10px;
+  z-index: 1000;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'wellbutrinregular';
+}
+
+#okBtn {
+  background-color: green;
+  position: fixed;
+  top: 315px;
+  left: 415px;
+  font-size: 30px;
+}
+
+#questionOne 
+{
+  position: fixed;
+  top: 155px;
+  left: 915px;
+  z-index: 400;
+  width: 125px;
+  height: auto;
+  opacity:0;
+}
+#answerOneBtn, #answerTwoBtn {
+  position: relative;
+  margin: 5px;
+  font-size: 12px;
+  text-align: center;
+  opacity:1;
+}
+#answerOneBtn {
+  background: url(../img/bordAnswer.png) no-repeat;
+  height: 37px;
+  padding-top: 10px;
+  -ms-transform: rotate(-10deg); /* IE 9 */
+  -webkit-transform: rotate(-10deg); /* Safari */
+  transform: rotate(-10deg);
+}
+#answerTwoBtn {
+  background: url(../img/bordAnswer.png) no-repeat;
+  height: 37px;
+  padding-top: 10px;
+  -ms-transform: rotate(5deg); /* IE 9 */
+  -webkit-transform: rotate(5deg); /* Safari */
+  transform: rotate(5deg);
+}
+
+#paalAnswers{
+  background: url(../img/paal.png);
+  height: 264px;
+  width: 12px;
+  position: absolute;
+  left: calc(50% - 12px / 2)
+}
+
+#okBtn:hover {
+  opacity:0.5;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#answerOneBtn:hover, #answerTwoBtn:hover{
+  color: #e8e8e8;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#char2{
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  top: 227px;
+  right: -170px;
+  background: url(../img/char2.png);
+  background-size: 180px 180px;
+  z-index: 300;
+  opacity: 1;
+}

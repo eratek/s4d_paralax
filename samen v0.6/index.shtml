@@ -48,9 +48,7 @@
                 <div id="backgroundScene2_1"></div>
                 <div id="backgroundScene2_2"></div>
             </div>
-        <div id="computerScreenOutside">
 
-        </div>
         <div id="computerScreen"></div>
 
     </div>
