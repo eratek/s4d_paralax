@@ -1,5 +1,1 @@
-tip:
-
-- maak een directory aan voor ramon
-- maak een directory aan voor teun
-- maak een directory aan voor samen
+This is a parralax without an plugin or what. there is one screen resolution availeble
