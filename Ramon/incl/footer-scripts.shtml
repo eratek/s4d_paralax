@@ -1,7 +1,0 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-<script src="static/js/component.fastscroll.js"></script>
-<script src="static/js/component.parallax.js"></script>
-<script src="static/js/component.loader.js"></script>
-<script src="static/js/component.scrolllock.js"></script>
-<script src="static/js/component.music.js"></script>
